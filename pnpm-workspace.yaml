@@ -1,0 +1,12 @@
+packages:
+  - .
+
+# pnpm 11 denies dependency lifecycle scripts until the downstream project
+# reviews them. This mirrors the upstream DSH policy for this installed graph.
+allowBuilds:
+  esbuild: true
+  node-pty: true
+  koffi: true
+  '@deepseek-ai/dsh-subprocess-local': true
+  '@google/genai': false
+  protobufjs: false
