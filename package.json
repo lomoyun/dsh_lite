@@ -8,11 +8,19 @@
     "node": "^22.19.0 || >=24.0.0"
   },
   "scripts": {
-    "start": "tsx src/index.ts",
+    "start": "node scripts/start.mjs",
+    "cli": "tsx src/index.ts",
+    "plugin": "node scripts/start.mjs plugin",
+    "test": "node --test packages/dsh-model-config/test/*.test.js packages/dsh-lite-web-app/test/*.test.js packages/dsh-prompt-config/test/*.test.js packages/dsh-workspace/test/*.test.js",
     "typecheck": "tsc --noEmit",
-    "config:dump": "dsh --profile sdk --patch ./config/dsh-lite.cordis.yml --dump-config"
+    "config:dump": "node scripts/start.mjs --dump-config"
   },
   "dependencies": {
+    "@dsh-lite/workspace": "workspace:*",
+    "@dsh-lite/prompt-config": "workspace:*",
+    "@dsh-lite/model-config": "workspace:*",
+    "@dsh-lite/core": "workspace:*",
+    "@dsh-lite/web-app": "workspace:*",
     "@deepseek-ai/dsh": "0.1.2-rc.1",
     "@deepseek-ai/dsh-sdk-client": "0.1.2-rc.1",
     "react": "18.3.1",

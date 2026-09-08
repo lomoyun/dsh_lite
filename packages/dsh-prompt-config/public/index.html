@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>提示词设置 · DSH Lite</title><link rel="stylesheet" href="/prompts/style.css"></head>
+<body><aside aria-label="设置导航"><a class="brand" href="/">DSH Lite</a><p>你的轻量 AI 工作空间</p><nav><a href="/">返回对话</a><a href="/models">模型设置</a><a href="/prompts" aria-current="page">提示词设置</a></nav><small>本地配置 · 新对话生效</small></aside>
+<main><header><div><p class="eyebrow">设置 / 提示词</p><h1>定义你的助手</h1><p>保留默认能力，或从一段新的系统提示词开始。</p></div><button id="reload" type="button">重新加载</button></header>
+<section class="summary"><strong id="saved-mode">正在加载…</strong><p>保存后仅对新创建的 Agent 生效，已有对话保持原来的提示词。</p></section>
+<form id="editor"><section class="card"><div class="field"><label for="mode">覆盖范围</label><select id="mode"><option value="inherit">使用宿主默认</option><option value="persona">覆盖角色描述</option><option value="complete">完整覆盖 system prompt</option></select><p id="mode-help" class="hint"></p></div>
+<div class="field"><div class="label-row"><label for="prompt">自定义提示词</label><span id="count">0 / 24000</span></div><textarea id="prompt" rows="13" maxlength="24000" spellcheck="false" aria-describedby="variables" placeholder="例如：你是一位中文写作助手。回答简洁、清晰，不主动介绍未使用的能力。"></textarea><p id="variables" class="hint">支持 {{model}}、{{provider}}、{{cwd}}。不要在提示词中填写密钥等敏感信息。</p><button id="use-default" type="button">以默认角色为起点</button></div>
+<div class="actions"><button id="restore" type="button">恢复默认</button><button id="preview-button" type="button">预览草稿</button><button id="save" type="submit" class="primary">保存设置</button></div></section></form>
+<p id="notice" role="status" aria-live="polite"></p><button id="discard" type="button" hidden>放弃未保存修改</button>
+<section class="boundary"><h2>覆盖不等于关闭能力</h2><p>完整覆盖会移除宿主身份、角色和工具指导等 system 文本，但不会禁用工具，也不会移除独立注入的技能目录、运行环境或会话历史。AGENTS.md 是否加载，仍由宿主 agent-instructions 插件决定。</p></section>
+<section aria-labelledby="preview-title"><div class="preview-heading"><h2 id="preview-title">最终 system prompt 预览</h2><span id="preview-state">已保存配置</span></div><p id="preview-context" class="hint"></p><p class="hint">按当前默认模型和宿主全局配置组装，不调用模型。特定 Agent preset 的额外覆盖、技能目录和运行时上下文不包含在此预览中。</p><pre id="preview" tabindex="0" aria-label="最终提示词文本"></pre><details><summary>保留的工具与提示词段落</summary><p id="sections"></p><p id="tools"></p></details></section>
+</main><dialog id="restore-dialog" aria-labelledby="restore-title"><h2 id="restore-title">恢复宿主默认？</h2><p>将立即保存“使用宿主默认”，清空此插件的自定义文本。已有对话不变。</p><div class="actions"><button id="cancel-restore" type="button">取消</button><button id="confirm-restore" type="button" class="primary">确认恢复默认</button></div></dialog><script type="module" src="/prompts/app.js"></script></body></html>

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DSH Lite · 对话</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/workspace.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <aside>
+    <a class="brand" href="/" aria-label="DSH Lite 首页"><span class="mark">d.</span> DSH <span class="light">Lite</span></a>
+    <button id="new-chat" class="new-chat"><span aria-hidden="true">＋</span> 新建对话</button>
+    <button id="sidebar-toggle" aria-label="切换会话列表" aria-expanded="false" aria-controls="workspace-nav">☰</button>
+    <nav id="workspace-nav" aria-label="工作区和会话列表" hidden>
+      <div class="workspace-title"><span>个人工作区</span><button id="new-project" aria-label="新建项目">＋ 项目</button></div>
+      <div id="workspace-tree"></div>
+      <label class="archive-toggle"><input id="show-archived" type="checkbox"> 显示已归档</label>
+      <p id="workspace-status" role="status"></p>
+    </nav>
+    <section class="token-panel" aria-label="Token 用量统计"><span class="eyebrow">当前会话 TOKEN</span><strong id="token-total">—</strong><p id="token-details">发送消息后显示实际用量。</p><small>来自服务商返回值；不包含价格估算。</small></section>
+    <div class="local"><span class="dot"></span> 本地工作空间</div>
+  </aside>
+  <main>
+    <header><span id="breadcrumbs">对话</span><a href="/models" class="settings-link">模型配置</a><a href="/prompts" class="settings-link">提示词</a><span id="model" class="model">正在连接…</span></header>
+    <p id="project-summary" hidden></p>
+    <div id="model-picker-row" class="model-picker-row" hidden><label for="model-picker">新对话模型</label><select id="model-picker" aria-describedby="model-picker-hint"></select><small id="model-picker-hint">仅用于本次新对话，不改变默认设置。</small></div>
+    <section id="conversation" aria-label="对话内容">
+      <div id="welcome">
+        <span class="eyebrow">LET’S THINK TOGETHER</span>
+        <h1>今天，从什么开始？</h1>
+        <p>整理思路、探索问题，或把一个想法变成清晰的计划。</p>
+        <div class="suggestions">
+          <button data-prompt="帮我梳理一个想法，请先问我想解决什么问题。"><span>梳理想法</span><small>把零散的思路整理清楚</small><b aria-hidden="true">↗</b></button>
+          <button data-prompt="帮我制定一份行动计划，请先询问我的目标与时间安排。"><span>制定计划</span><small>找到下一步可以做的事</small><b aria-hidden="true">↗</b></button>
+          <button data-prompt="帮我理解一个复杂概念，请先问我想了解什么。"><span>探索问题</span><small>用容易理解的方式深入了解</small><b aria-hidden="true">↗</b></button>
+        </div>
+      </div>
+      <div id="messages" role="log" aria-live="polite"></div>
+    </section>
+    <div class="composer-wrap">
+      <p id="mobile-token-total" class="mobile-token-total" aria-live="polite">当前会话 Token：—</p>
+      <p id="error" role="alert" hidden></p>
+      <form id="form">
+        <label class="sr-only" for="prompt">输入你的问题</label>
+        <textarea id="prompt" rows="3" maxlength="8000" placeholder="输入你的问题，或分享一个想法…" required></textarea>
+        <div class="composer-bottom"><span id="status" role="status">Enter 发送 · Shift + Enter 换行</span><button id="send" type="submit" aria-label="发送消息">发送 <span aria-hidden="true">↑</span></button></div>
+      </form>
+      <p class="footnote">AI 的回答可能存在偏差，请核实重要信息。</p>
+    </div>
+  </main>
+  <dialog id="record-dialog" aria-labelledby="record-heading">
+    <h2 id="record-heading">项目设置</h2>
+    <form id="record-form">
+      <label for="record-name">名称</label><input id="record-name" maxlength="80" required>
+      <div id="project-fields">
+        <label for="record-model">默认模型</label><select id="record-model"></select>
+        <label for="record-instructions">项目说明</label><textarea id="record-instructions" maxlength="8000" placeholder="例如：用简体中文回答，关注这个项目的目标。"></textarea>
+        <label for="record-mode">项目提示词</label><select id="record-mode"><option value="inherit">跟随全局提示词</option><option value="persona">覆盖角色设定</option><option value="complete">覆盖完整系统提示词</option></select>
+        <label for="record-prompt">提示词内容</label><textarea id="record-prompt" maxlength="24000" placeholder="支持 {{model}}、{{provider}}、{{cwd}}"></textarea>
+        <small>配置只影响新会话；已有会话保留创建时的配置。项目说明不代表读取本地文件。</small>
+      </div>
+      <div id="session-fields" hidden><label for="record-project">所属项目</label><select id="record-project"></select><small>移动只改变归属，不改变原模型和提示词。</small></div>
+      <label id="record-archive-row"><input id="record-archived" type="checkbox"> 已归档（保留历史，可恢复）</label>
+      <p id="record-error" role="alert"></p>
+      <div class="dialog-actions"><button id="record-cancel" type="button">取消</button><button id="record-save" type="submit">保存</button></div>
+    </form>
+  </dialog>
+</body>
+</html>

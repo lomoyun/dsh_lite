@@ -1,0 +1,13 @@
+{
+  "name": "@dsh-lite/workspace", "version": "0.1.0", "type": "module",
+  "main": "src/index.js", "exports": { ".": "./src/index.js", "./package.json": "./package.json" },
+  "files": ["src", "README.md", "cordis.patch.yml"],
+  "dsh": { "bundle": { "patch": "./cordis.patch.yml" } },
+  "dependencies": { "@deepseek-ai/schemastery": "3.18.2" },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2", "@deepseek-ai/dsh-session-persistence": "0.1.2-rc.1",
+    "@deepseek-ai/dsh-settings": "0.1.2-rc.1", "@deepseek-ai/dsh-agent-default-model": "0.1.2-rc.1",
+    "@deepseek-ai/dsh-llm": "0.1.2-rc.1", "@deepseek-ai/dsh-system-prompt": "0.1.2-rc.1",
+    "@deepseek-ai/dsh-host-webserver": "0.1.2-rc.1"
+  }
+}

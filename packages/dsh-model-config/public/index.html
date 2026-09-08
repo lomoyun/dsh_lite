@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>模型设置 · DSH Lite</title><link rel="stylesheet" href="/models/style.css"></head>
+<body>
+<div class="app-shell">
+<aside class="sidebar" aria-label="连接导航">
+  <a class="brand" href="/"><span class="brand-icon" aria-hidden="true">D</span><span>DSH Lite<small>你的轻量 AI 工作空间</small></span></a>
+  <a class="back-link" href="/">← 返回对话</a>
+  <a class="back-link" href="/prompts">提示词设置</a>
+  <div class="sidebar-heading"><span>模型连接</span><span id="config-count">0</span></div>
+  <nav id="config-list" aria-label="已保存连接"></nav>
+  <button id="add-config" type="button" class="add-connection">＋ 添加连接</button>
+  <label class="builtin-label" for="provider">切换连接</label><select id="provider"></select>
+  <div class="sidebar-foot"><span class="status-dot" aria-hidden="true"></span>本地配置 · 密钥不回显</div>
+</aside>
+<main>
+  <header class="page-heading"><div><p class="eyebrow">设置 / 模型</p><h1>模型设置</h1><p>选择你的思考引擎，让连接保持简单。</p></div><button id="reload" type="button" class="secondary">重新加载</button></header>
+  <section class="default-card" aria-label="当前默认模型"><span class="default-icon" aria-hidden="true">✦</span><div><small>默认模型</small><strong id="current-model">加载中…</strong><span id="current-provider"></span></div><span class="pill">新对话生效</span></section>
+  <div class="section-heading"><h2 id="connection-title">连接设置</h2><span id="connection-state" class="subtle"></span></div>
+  <form id="connection-form" class="card">
+    <div class="field-row"><label for="connection-name">连接名称<small>取一个容易辨认的名字</small></label><input id="connection-name" maxlength="80" placeholder="例如：我的 DeepSeek" required></div>
+    <div class="field-row"><label for="service-type">服务类型</label><select id="service-type"><option value="deepseek">DeepSeek</option><option value="openai">OpenAI 兼容</option><option value="anthropic">Anthropic</option><option value="local">本地兼容服务</option></select></div>
+    <div class="field-row"><label for="base-url">接口地址<small>保留服务商要求的 /v1 路径</small></label><input id="base-url" type="url" required placeholder="https://api.example.com/v1"></div>
+    <div class="field-row"><label for="api-key">API Key<small id="credential-status">密钥仅在本地服务端保存</small></label><input id="api-key" type="password" autocomplete="new-password" maxlength="8192" placeholder="粘贴密钥；已有密钥留空不变"></div>
+    <div id="first-model-row" class="field-row" hidden><label for="first-model">首个模型<small>DSH 要求连接至少配置一个模型</small></label><input id="first-model" maxlength="200" placeholder="服务商提供的模型 ID"></div>
+    <details id="advanced"><summary>高级设置</summary><div class="advanced-fields">
+      <label for="provider-id">内部 ID</label><input id="provider-id" readonly placeholder="保存时自动生成">
+      <label for="protocol">接口协议</label><select id="protocol"><option value="openai-completions">OpenAI Chat Completions</option><option value="openai-responses">OpenAI Responses</option><option value="anthropic-messages">Anthropic Messages</option><option value="">内置 DeepSeek</option></select>
+      <label for="key-ref">密钥引用名称</label><input id="key-ref" placeholder="自动生成，无需填写" pattern="[A-Z_][A-Z0-9_]*" maxlength="100"><p class="hint">这是内部查找密钥的名称，不是 API Key。一般无需修改。</p>
+    </div></details>
+    <div class="form-footer"><span class="hint">保存不调用模型，也不会切换默认模型。</span><button type="submit" class="primary">保存连接</button></div>
+  </form>
+  <section id="models-section" aria-labelledby="models-heading">
+    <div class="section-heading"><div><h2 id="models-heading">可用模型</h2><p>同一个连接，共用地址和密钥。</p></div><div class="actions"><button id="test-connection" type="button" class="secondary">测试连接 / 获取模型</button><button id="add-model" type="button" class="secondary">＋ 添加模型</button></div></div>
+    <div id="model-list" class="card model-list"></div>
+    <p class="hint">测试只读取模型列表，不发送对话。列表可访问不代表实际推理一定成功。</p>
+  </section>
+  <div class="notice-bar"><p id="notice" role="status" aria-live="polite">正在加载配置…</p><button id="discard" type="button" class="text-button" hidden>放弃未保存修改</button></div>
+  <footer class="page-foot">连接负责访问服务，模型负责回答。Token 用量会在对话中单独显示。</footer>
+</main></div>
+<dialog id="model-dialog" aria-labelledby="dialog-title"><form id="model-form">
+  <h2 id="dialog-title">添加模型</h2><p class="hint">填写服务商的模型 ID；容量默认值是估计，请按文档核对。</p>
+  <label for="model-id">模型 ID</label><input id="model-id" list="catalog-options" maxlength="200" required><datalist id="catalog-options"></datalist>
+  <label for="context-window">上下文长度</label><input id="context-window" type="number" min="1" max="10000000" value="131072" required>
+  <label for="model-max">最大输出 Token</label><input id="model-max" type="number" min="1" max="10000000" value="8192" required>
+  <p id="model-error" role="alert" class="error"></p><div class="dialog-actions"><button id="cancel-model" type="button" class="secondary">取消</button><button type="submit" class="primary">保存模型</button></div>
+</form></dialog>
+<script type="module" src="/models/app.js"></script>
+</body></html>

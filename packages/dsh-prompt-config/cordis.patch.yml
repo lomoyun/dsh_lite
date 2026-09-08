@@ -1,0 +1,3 @@
+- insert:
+    - id: prompt-config-ui
+      name: '@dsh-lite/prompt-config'

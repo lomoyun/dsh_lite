@@ -1,0 +1,39 @@
+# Neutral application layer over dsh-base.
+
+- id: agent-default-model
+  config:
+    provider: !!js process.env.DSH_LITE_PROVIDER || 'deepseek-official'
+    model: !!js process.env.DSH_LITE_MODEL || 'deepseek-v4-flash'
+
+- id: system-prompt
+  config:
+    persona: >-
+      You are a general-purpose intelligent agent powered by the {{model}} model.
+      Focus on the user's stated domain and goals. Do not assume that software
+      development is the task. Use only the capabilities enabled for this agent.
+
+# Repository coding instructions and direct code-execution/editing tools are
+# intentionally absent from the model-visible surface in dsh_lite.
+- id: agent-instructions
+  disabled: true
+
+- id: tool-bash
+  disabled: true
+
+- id: tool-pwsh
+  disabled: true
+
+- id: tool-jobs
+  disabled: true
+
+- id: tool-fs
+  disabled: true
+
+- id: tool-fs-search
+  disabled: true
+
+- id: tool-ralph
+  disabled: true
+
+- id: tool-str-replace-editor
+  disabled: true

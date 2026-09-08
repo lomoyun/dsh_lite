@@ -1,0 +1,10 @@
+- insert:
+    - id: lite-http
+      name: '@deepseek-ai/dsh-host-webserver'
+      config:
+        host: 127.0.0.1
+        port: 43187
+    - id: lite-web-app
+      name: '@dsh-lite/web-app'
+      config:
+        cwd: !!js process.env.LITE_PROJECT_CWD || process.cwd()

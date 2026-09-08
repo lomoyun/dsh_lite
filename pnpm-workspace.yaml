@@ -1,5 +1,6 @@
 packages:
   - .
+  - packages/*
 
 # pnpm 11 denies dependency lifecycle scripts until the downstream project
 # reviews them. This mirrors the upstream DSH policy for this installed graph.

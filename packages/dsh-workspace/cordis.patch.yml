@@ -1,0 +1,6 @@
+- insert:
+    - id: lite-workspace
+      name: '@dsh-lite/workspace'
+      config:
+        cwd: !!js process.env.LITE_PROJECT_CWD
+        home: !!js process.env.DSH_HOME

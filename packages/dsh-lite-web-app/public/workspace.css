@@ -1,0 +1,48 @@
+aside { width:280px; padding:24px 18px; min-height:0; }
+.new-chat { margin-top:24px; flex-shrink:0; }
+#workspace-nav { flex:1; min-height:90px; overflow:auto; margin:20px -6px 12px; }
+.workspace-title,.tree-heading,.tree-session { display:flex; align-items:center; gap:4px; }
+.workspace-title { padding:0 8px 12px; justify-content:space-between; font-size:13px; font-weight:600; }
+#workspace-nav button,#sidebar-toggle { border:0; border-radius:8px; background:transparent; color:var(--ink); min-height:36px; }
+#workspace-nav button:hover,#workspace-nav button.selected { background:#dedee6; }
+.group-name,.session-name { text-align:left; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; flex:1; min-width:0; padding:6px 10px; }
+.group-name { font-size:12px; font-weight:600; }
+.session-name { font-size:13px; }
+.tree-session { padding-left:14px; }
+.more { width:32px; flex-shrink:0; }
+#workspace-tree section { margin-bottom:14px; }
+.archive-toggle { display:block; padding:8px; color:var(--muted); font-size:12px; }
+#workspace-status { font-size:12px; color:var(--muted); padding:0 8px; }
+.token-panel { margin-top:0; padding:10px 0; }
+.token-panel strong { font-size:23px; margin:2px 0; }
+.token-panel p { margin:4px 0; font-size:11px; }
+.local { margin-top:8px; }
+#breadcrumbs { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+#project-summary { margin:0; padding:0 40px 12px; color:var(--muted); font-size:12px; }
+#sidebar-toggle { display:none; }
+dialog { border:1px solid var(--line); border-radius:20px; padding:24px; width:min(560px,calc(100% - 24px)); max-height:90dvh; overflow:auto; color:var(--ink); box-shadow:0 24px 80px #0002; }
+dialog::backdrop { background:#1d1d1f55; }
+dialog h2 { margin:0 0 18px; font-size:22px; font-weight:600; }
+dialog form { border:0; padding:0; box-shadow:none; }
+dialog label { display:block; font-size:13px; margin:12px 0 6px; }
+dialog input:not([type=checkbox]),dialog select,dialog textarea { width:100%; border:1px solid #d8d8de; border-radius:8px; padding:10px; background:white; font:inherit; color:var(--ink); }
+dialog textarea { min-height:90px; }
+dialog small { color:var(--muted); font-size:12px; }
+.dialog-actions { display:flex; justify-content:flex-end; gap:10px; margin-top:20px; }
+.dialog-actions button { min-height:44px; padding:8px 20px; border:0; border-radius:9px; background:var(--bg); }
+#record-save { background:var(--accent); color:white; }
+#record-error { color:var(--error); font-size:13px; }
+@media(max-width:900px) {
+  body { flex-direction:column; }
+  aside { width:100%; height:66px; padding:10px 16px; flex-direction:row; align-items:center; justify-content:space-between; border-right:0; border-bottom:1px solid var(--line); }
+  .brand { font-size:20px; gap:6px; } .mark { font-size:24px; }
+  .new-chat { margin:0; width:auto; font-size:13px; padding:6px 12px; min-height:44px; }
+  .new-chat span { font-size:18px; margin-right:4px; }
+  .local,.token-panel { display:none; } .mobile-token-total { display:block; }
+  main { min-height:0; }
+  #sidebar-toggle { display:block; min-width:44px; min-height:44px; font-size:22px; }
+  #workspace-nav { display:none; position:fixed; z-index:5; top:66px; bottom:0; left:0; width:min(320px,90vw); margin:0; padding:18px 12px; background:#ececf0; box-shadow:12px 0 40px #0002; }
+  .sidebar-open #workspace-nav { display:block; }
+  #project-summary { padding:0 16px 8px; }
+  header { padding:0 16px; gap:10px; height:60px; } header .model { display:none; }
+}
