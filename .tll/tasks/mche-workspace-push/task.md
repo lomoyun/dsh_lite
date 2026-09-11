@@ -4,9 +4,9 @@ id: mche-workspace-push
 title: 整体提交并推送 MCHE 工作区
 creator: lomoyun
 owner: lomoyun
-status: doing
+status: done
 createdAt: 2026-09-11T09:37:16.332Z
-updatedAt: 2026-09-11T09:38:14.363Z
+updatedAt: 2026-09-11T09:50:59.193Z
 ---
 # 整体提交并推送 MCHE 工作区
 
@@ -28,7 +28,8 @@ updatedAt: 2026-09-11T09:38:14.363Z
 
 
 <!-- tll:plan -->
+
 # Plan
 
-- [ ] S1: 核对整体文件、远端和凭证，暂存明确清单并记录有效验证。
-- [ ] S2: 提交并推送当前分支，验证远端一致，保存并同步交付记录。
+- [x] S1: 核对整体文件、远端和凭证，暂存明确清单并记录有效验证。
+- [x] S2: 提交并推送当前分支，验证远端一致，保存并同步交付记录。
