@@ -1,0 +1,15 @@
+﻿{
+    "evidence":  {
+                     "native":  "docs/verification/evidence/flow-topology/native/summary.json",
+                     "contract":  "docs/flow-topology.md",
+                     "tests":  "docs/verification/evidence/flow-topology/targeted-tests.tap",
+                     "report":  "docs/verification/2026-09-11-flow-topology-animation.md",
+                     "browser":  "docs/verification/evidence/flow-topology/browser.json",
+                     "video":  "docs/verification/evidence/flow-topology/flow-playback.webm"
+                 },
+    "expectedRevision":  "9f47445c84cc1642470246c567d74ee5e77ea3fcfe25802da31bb7eff7d2df93",
+    "type":  "block",
+    "key":  "flow-topology-final-blocked-20260911",
+    "schemaVersion":  1,
+    "summary":  "S1/S2/S3已落实；S4/S5真实工程验收受阻。定向23/23、typecheck、桌面及390px窄屏、30流程、确认失效、会话隔离、键盘/减少动态/资源释放及实际录像通过。单排/串联5组64槽独立一致但42/43 NaN；并联两路径均0xe06d7363且缺分配依据，正式执行阻塞。需供应方修复和工程资料后继续；未完成整项，未提交推送。"
+}

@@ -45,6 +45,21 @@ test('缺少凭据拒绝调用', async () => {
   finally { f.close() }
 })
 
+test('总时限与无进展超时返回明确的 504 分类，JSON 和 SSE 一致', async () => {
+  for (const code of ['TURN_TIMEOUT', 'TURN_IDLE_TIMEOUT']) {
+    const f = await fixture({ status: async () => ({ configured: true }), run: async () => {
+      throw Object.assign(new Error('本轮超时，已保存资料可重新打开查看'), { code, sessionId: 'saved-session' })
+    } })
+    try {
+      const response = await f.post({ prompt: 'test' }), body = await response.json()
+      assert.equal(504, response.status); assert.equal(code, body.code); assert.equal('saved-session', body.sessionId)
+      const stream = await fetch(f.base + '/api/chat', { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'text/event-stream' }, body: JSON.stringify({ prompt: 'test' }) })
+      const frame = JSON.parse((await stream.text()).trim().slice(6))
+      assert.equal('error', frame.type); assert.equal(504, frame.status); assert.equal(code, frame.code)
+    } finally { f.close() }
+  }
+})
+
 test('并发请求拒绝、模型失败脱敏并让客户端失效旧会话', async () => {
   const started = Promise.withResolvers()
   const pending = Promise.withResolvers()

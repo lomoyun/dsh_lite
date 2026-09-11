@@ -1,0 +1,13 @@
+﻿{
+    "evidence":  {
+                     "files":  [
+                                   "docs/verification/evidence/flow-topology/targeted-tests.tap",
+                                   "docs/verification/evidence/flow-topology/native/summary.json"
+                               ]
+                 },
+    "expectedRevision":  "c00926dbde6da1529e02dd781f54783457f8a1103f06ddef8310d3022de81210",
+    "type":  "milestone",
+    "key":  "flow-topology-s1-s4-native-block-20260911",
+    "schemaVersion":  1,
+    "summary":  "已实现版本化结构、原样例矩阵校准、多排Profile与Worker、页面动画及编辑；定向23/23通过。5组合成真实调用64槽与独立路径一致但42/43仍NaN；并联两路径均抛0xe06d7363，正式执行被阻塞。最终浏览器收尾进行中；未提交推送。"
+}

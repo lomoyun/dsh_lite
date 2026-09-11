@@ -102,7 +102,8 @@ export class Workspace extends Service {
     const record = await this.requireRecord(sessionId)
     projectOf(await this.store.view(), record.projectId)
     if (record.archived) throw new InputError('会话已归档，请先取消归档')
-    if (!record.snapshot?.system) throw new InputError('缺少原始模型或提示词快照，此会话只能查看，请新建对话')
+    const liveDraft = record.status === 'draft' && this.ctx.get('agents')?.get(sessionId)
+    if (!record.snapshot?.system && !liveDraft) throw new InputError('缺少原始模型或提示词快照，此会话只能查看，请新建对话')
     if (!this.ctx.get('promptSnapshots')) throw new InputError('请启用提示词插件后恢复会话，以保留原提示词')
     return record
   }

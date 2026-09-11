@@ -1,0 +1,476 @@
+[
+  {
+    "evidence": "baseline-verified",
+    "model": {
+      "model": "DeepSeek-V4-Flash-0731",
+      "configured": true
+    },
+    "completed": true,
+    "toolCalls": 6,
+    "toolFailures": 0,
+    "sessions": [
+      {
+        "id": "abcbfcab-fc1f-4ac1-924e-3c772e67ad05",
+        "apiTurns": 2,
+        "stateSnapshots": 1,
+        "finalTopology": {
+          "schemaVersion": 1,
+          "rows": [
+            {
+              "id": "r1",
+              "passes": [
+                {
+                  "id": "r1p1",
+                  "tubeCount": null,
+                  "direction": null
+                }
+              ]
+            }
+          ],
+          "connection": "series",
+          "order": [
+            "r1p1"
+          ],
+          "source": "",
+          "origin": "legacy-projection"
+        },
+        "draft": {},
+        "components": {
+          "fin": null,
+          "refrigerant": null,
+          "tube": null
+        }
+      }
+    ]
+  },
+  {
+    "evidence": "live-final",
+    "model": {
+      "model": "DeepSeek-V4-Flash-0731",
+      "configured": true
+    },
+    "completed": true,
+    "errors": [],
+    "toolCalls": 20,
+    "toolFailures": 0,
+    "sessions": [
+      {
+        "id": "aa93ff1b-65e9-4957-a2fb-e24ba75c5d42",
+        "apiTurns": 5,
+        "stateSnapshots": 9,
+        "finalTopology": {
+          "schemaVersion": 1,
+          "rows": [
+            {
+              "id": "r1",
+              "passes": [
+                {
+                  "id": "r1p1",
+                  "tubeCount": 30,
+                  "direction": "left"
+                }
+              ]
+            }
+          ],
+          "connection": "series",
+          "order": [
+            "r1p1"
+          ],
+          "source": "独立验收：工程师页面明确单排30根、左进右出",
+          "origin": "user"
+        },
+        "draft": {
+          "finnedLength": {
+            "value": 500,
+            "unit": "mm",
+            "source": "独立验收：用户明确数值，非正式工程验证",
+            "normalized": 0.5,
+            "normalizedUnit": "m",
+            "origin": "user"
+          },
+          "unfinnedLength": {
+            "value": 0,
+            "unit": "mm",
+            "source": "独立验收：用户明确数值，非正式工程验证",
+            "normalized": 0,
+            "normalizedUnit": "m",
+            "origin": "user"
+          },
+          "airDirection": {
+            "value": "right_to_left",
+            "unit": "",
+            "source": "独立验收：用户明确空气右向左",
+            "normalized": "right_to_left",
+            "normalizedUnit": "",
+            "origin": "user"
+          }
+        },
+        "components": {
+          "fin": {
+            "name": "B04",
+            "code": "310040",
+            "section": "main",
+            "proposalId": "48ef9ab5-67e6-4aba-a59d-26c0197acaf4",
+            "snapshotId": "ad1563ee-a356-48c0-97ae-b27bb9148cd0",
+            "confirmed": true,
+            "confirmedAt": "2026-09-11T07:43:35.130Z",
+            "invalidReason": null
+          },
+          "refrigerant": {
+            "name": "R454C",
+            "sequence": 14,
+            "category": "制冷剂",
+            "proposalId": "5f2ac626-37ec-48da-94e8-a4e04f992877",
+            "snapshotId": "b110dcb0-bb32-4c84-839e-d1b2bea3f27c",
+            "confirmed": true,
+            "confirmedAt": "2026-09-11T07:43:35.476Z",
+            "invalidReason": null
+          },
+          "tube": {
+            "proposalId": "f4632ddc-f53e-4f68-8026-0151eaccd27c",
+            "snapshotId": "b944a020-4b23-481a-ae12-a728279d24a7",
+            "name": "A10",
+            "confirmed": true,
+            "confirmedAt": "2026-09-11T07:43:34.878Z",
+            "invalidReason": null
+          }
+        },
+        "checks": [
+          "26条原始需求",
+          "无默认管宽",
+          "三部件页面确认",
+          "真实模型导航打开空动画",
+          "页面结构保存与后续对话",
+          "目录疑点及实际执行限制人工复核"
+        ]
+      },
+      {
+        "id": "652022d1-2c07-4d3f-a50c-a8b624b9f4be",
+        "apiTurns": 5,
+        "stateSnapshots": 9,
+        "finalTopology": {
+          "schemaVersion": 1,
+          "rows": [
+            {
+              "id": "r1",
+              "passes": [
+                {
+                  "id": "r1p1",
+                  "tubeCount": 30,
+                  "direction": "left"
+                }
+              ]
+            }
+          ],
+          "connection": "series",
+          "order": [
+            "r1p1"
+          ],
+          "source": "独立验收：工程师页面明确单排30根、左进右出",
+          "origin": "user"
+        },
+        "draft": {
+          "finnedLength": {
+            "value": 500,
+            "unit": "mm",
+            "source": "独立验收：用户明确数值，非正式工程验证",
+            "normalized": 0.5,
+            "normalizedUnit": "m",
+            "origin": "user"
+          },
+          "unfinnedLength": {
+            "value": 0,
+            "unit": "mm",
+            "source": "独立验收：用户明确数值，非正式工程验证",
+            "normalized": 0,
+            "normalizedUnit": "m",
+            "origin": "user"
+          },
+          "airDirection": {
+            "value": "right_to_left",
+            "unit": "",
+            "source": "独立验收：用户明确空气右向左",
+            "normalized": "right_to_left",
+            "normalizedUnit": "",
+            "origin": "user"
+          }
+        },
+        "components": {
+          "fin": {
+            "name": "B04",
+            "code": "310040",
+            "section": "main",
+            "proposalId": "d2290472-3748-4572-a8b9-126fd23ec293",
+            "snapshotId": "2a34ad8f-62b4-43e9-adf3-efa668428f2d",
+            "confirmed": true,
+            "confirmedAt": "2026-09-11T07:46:16.176Z",
+            "invalidReason": null
+          },
+          "refrigerant": {
+            "name": "R454C",
+            "sequence": 14,
+            "category": "制冷剂",
+            "proposalId": "69fddbf7-1e59-4aed-be43-050ec17dbe10",
+            "snapshotId": "00b254dc-591f-437f-a605-67371e6afc44",
+            "confirmed": true,
+            "confirmedAt": "2026-09-11T07:46:16.475Z",
+            "invalidReason": null
+          },
+          "tube": {
+            "proposalId": "d26c71a7-a6ef-4f8b-9b6f-6be0d2bc93af",
+            "snapshotId": "cfe346cd-cbe0-445a-914f-278784b1001c",
+            "name": "A10",
+            "confirmed": true,
+            "confirmedAt": "2026-09-11T07:46:15.854Z",
+            "invalidReason": null
+          }
+        },
+        "checks": [
+          "26条原始需求",
+          "无默认管宽",
+          "三部件页面确认",
+          "真实模型导航打开空动画",
+          "页面结构保存与后续对话",
+          "目录疑点及实际执行限制人工复核"
+        ]
+      }
+    ]
+  },
+  {
+    "evidence": "evidence-recheck",
+    "model": {
+      "model": "DeepSeek-V4-Flash-0731",
+      "configured": true
+    },
+    "completed": true,
+    "toolCalls": 3,
+    "toolFailures": 0,
+    "sessions": [
+      {
+        "id": "4a21b8e7-e026-420c-aec6-dbe57956dee5",
+        "apiTurns": 3,
+        "stateSnapshots": 1,
+        "finalTopology": {
+          "schemaVersion": 1,
+          "rows": [
+            {
+              "id": "r1",
+              "passes": [
+                {
+                  "id": "r1p1",
+                  "tubeCount": null,
+                  "direction": null
+                }
+              ]
+            }
+          ],
+          "connection": "series",
+          "order": [
+            "r1p1"
+          ],
+          "source": "",
+          "origin": "legacy-projection"
+        },
+        "draft": {},
+        "components": {
+          "fin": null,
+          "refrigerant": null,
+          "tube": null
+        }
+      }
+    ]
+  },
+  {
+    "evidence": "live-acceptance",
+    "model": {
+      "model": "DeepSeek-V4-Flash-0731",
+      "configured": true
+    },
+    "completed": true,
+    "errors": [],
+    "toolCalls": 16,
+    "toolFailures": 0,
+    "sessions": [
+      {
+        "id": "2f374926-358b-4ebe-a698-3c1b72801d8c",
+        "apiTurns": 5,
+        "stateSnapshots": 9,
+        "finalTopology": {
+          "schemaVersion": 1,
+          "rows": [
+            {
+              "id": "r1",
+              "passes": [
+                {
+                  "id": "r1p1",
+                  "tubeCount": 30,
+                  "direction": "left"
+                }
+              ]
+            }
+          ],
+          "connection": "series",
+          "order": [
+            "r1p1"
+          ],
+          "source": "独立验收：工程师页面明确单排30根、左进右出",
+          "origin": "user"
+        },
+        "draft": {
+          "finnedLength": {
+            "value": 500,
+            "unit": "mm",
+            "source": "独立验收：用户明确数值，非正式工程验证",
+            "normalized": 0.5,
+            "normalizedUnit": "m",
+            "origin": "user"
+          },
+          "unfinnedLength": {
+            "value": 0,
+            "unit": "mm",
+            "source": "独立验收：用户明确数值，非正式工程验证",
+            "normalized": 0,
+            "normalizedUnit": "m",
+            "origin": "user"
+          },
+          "airDirection": {
+            "value": "right_to_left",
+            "unit": "",
+            "source": "独立验收：用户明确空气右向左",
+            "normalized": "right_to_left",
+            "normalizedUnit": "",
+            "origin": "user"
+          }
+        },
+        "components": {
+          "fin": {
+            "name": "B04",
+            "code": "310040",
+            "section": "main",
+            "proposalId": "37bc80c4-d7a0-4dfc-841f-fe7e2ce246c4",
+            "snapshotId": "c4314587-cee2-44fe-a192-19d06f7e9ee0",
+            "confirmed": true,
+            "confirmedAt": "2026-09-11T07:52:02.798Z",
+            "invalidReason": null
+          },
+          "refrigerant": {
+            "name": "R454C",
+            "sequence": 14,
+            "category": "制冷剂",
+            "proposalId": "4d488bb2-f792-4476-8859-40c6d6c4602d",
+            "snapshotId": "53a6fbca-af0e-4c0b-9da7-073e22806f19",
+            "confirmed": true,
+            "confirmedAt": "2026-09-11T07:52:03.159Z",
+            "invalidReason": null
+          },
+          "tube": {
+            "proposalId": "43edc27c-048b-461f-958f-82e7870b8b7c",
+            "snapshotId": "06e7c8bb-8e62-44f8-861e-f7fc038e96f1",
+            "name": "A10",
+            "confirmed": true,
+            "confirmedAt": "2026-09-11T07:52:02.441Z",
+            "invalidReason": null
+          }
+        },
+        "checks": [
+          "26条原始需求",
+          "无默认管宽",
+          "三部件页面确认",
+          "真实模型导航打开空动画",
+          "页面结构保存与后续对话",
+          "目录疑点及实际执行限制人工复核"
+        ]
+      },
+      {
+        "id": "1db0c1fb-b25c-4200-ac4b-335c9964ac40",
+        "apiTurns": 5,
+        "stateSnapshots": 9,
+        "finalTopology": {
+          "schemaVersion": 1,
+          "rows": [
+            {
+              "id": "r1",
+              "passes": [
+                {
+                  "id": "r1p1",
+                  "tubeCount": 30,
+                  "direction": "left"
+                }
+              ]
+            }
+          ],
+          "connection": "series",
+          "order": [
+            "r1p1"
+          ],
+          "source": "独立验收：工程师页面明确单排30根、左进右出",
+          "origin": "user"
+        },
+        "draft": {
+          "finnedLength": {
+            "value": 500,
+            "unit": "mm",
+            "source": "独立验收：用户明确数值，非正式工程验证",
+            "normalized": 0.5,
+            "normalizedUnit": "m",
+            "origin": "user"
+          },
+          "unfinnedLength": {
+            "value": 0,
+            "unit": "mm",
+            "source": "独立验收：用户明确数值，非正式工程验证",
+            "normalized": 0,
+            "normalizedUnit": "m",
+            "origin": "user"
+          },
+          "airDirection": {
+            "value": "right_to_left",
+            "unit": "",
+            "source": "独立验收：用户明确空气右向左",
+            "normalized": "right_to_left",
+            "normalizedUnit": "",
+            "origin": "user"
+          }
+        },
+        "components": {
+          "fin": {
+            "name": "B04",
+            "code": "310040",
+            "section": "main",
+            "proposalId": "e9ca45ce-835a-4c94-b7b5-2ef49e4fd0b0",
+            "snapshotId": "32058bd3-6a94-4854-a775-a8286a28627b",
+            "confirmed": true,
+            "confirmedAt": "2026-09-11T07:54:39.722Z",
+            "invalidReason": null
+          },
+          "refrigerant": {
+            "name": "R454C",
+            "sequence": 14,
+            "category": "制冷剂",
+            "proposalId": "6cf2682a-db61-449d-8116-4c731d89dbe0",
+            "snapshotId": "85bc9f19-042d-4f2b-a310-4ecb1125577a",
+            "confirmed": true,
+            "confirmedAt": "2026-09-11T07:54:39.986Z",
+            "invalidReason": null
+          },
+          "tube": {
+            "proposalId": "29970096-7504-4213-87bf-d4b16a4e3bc6",
+            "snapshotId": "d4ae2aad-ddc6-4871-9cb2-afdfc01f98bd",
+            "name": "A10",
+            "confirmed": true,
+            "confirmedAt": "2026-09-11T07:54:39.385Z",
+            "invalidReason": null
+          }
+        },
+        "checks": [
+          "26条原始需求",
+          "无默认管宽",
+          "三部件页面确认",
+          "真实模型导航打开空动画",
+          "页面结构保存与后续对话",
+          "目录疑点及实际执行限制人工复核"
+        ]
+      }
+    ]
+  }
+]

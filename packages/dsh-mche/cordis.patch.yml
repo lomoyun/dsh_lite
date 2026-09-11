@@ -1,0 +1,6 @@
+- insert:
+    - id: mche
+      name: '@dsh-lite/mche'
+      config:
+        home: !!js process.env.DSH_HOME
+        cwd: !!js process.env.LITE_PROJECT_CWD

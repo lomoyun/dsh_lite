@@ -1,4 +1,11 @@
 import { createSidebar, api } from './sidebar.js'
+import { createTableConversation } from './table-composer.js'
+import { mountAttachments } from './attachment-composer.js'
+import { encodeChatInput } from './table-message.js'
+import { createConversationActionView } from './conversation-actions.js'
+import { createDetailDrawer } from './detail-drawer.js'
+import { streamRequest } from './chat-stream.js'
+import { createChatView, count } from './chat-view.js'
 const $ = (selector) => document.querySelector(selector)
 const form = $('#form')
 const prompt = $('#prompt')
@@ -6,55 +13,64 @@ const messages = $('#messages')
 let sessionId
 let busy = false
 let expired = false
+let mcheEditable = true
 let defaultModel = ''
 const sidebar = createSidebar({ open: openSession, fresh: newChat, projectChanged: loadModelPicker,
   canSwitch() {
     if (busy) return false
+    if (hasUnsaved()) { showError('还有未发送的附件或表格，请先发送，或移除附件、放弃草稿。'); return false }
     if (!prompt.value.trim()) return true
     $('#error').textContent = '输入框还有未发送的内容，请先发送或清空后切换。'
     $('#error').hidden = false
     return false
   } })
-
-function addMessage(role, text) {
-  const article = document.createElement('article')
-  article.className = `message ${role}`
-  const label = document.createElement('div')
-  label.className = 'message-label'
-  label.textContent = role === 'user' ? '你' : 'DSH Lite'
-  const body = document.createElement('div')
-  body.className = 'message-body'
-  body.textContent = text
-  article.append(label, body)
-  messages.append(article)
-  $('#conversation').scrollTop = $('#conversation').scrollHeight
-  return article
+const details = createDetailDrawer({ session: () => sessionId, writable: () => !busy && !expired && !prompt.value.trim(),
+  mcheWritable: () => !busy && mcheEditable && !prompt.value.trim() })
+const tableTools = createTableConversation({ messages, details, onError: showError,
+  onSend: (tables) => sendMessage({ text: prompt.value.trim() || '请以我确认的这份表格继续对话。', tables }),
+  onChange: updateHint })
+const attachments = mountAttachments({ onError: showError, onChange: updateHint })
+const actionView = createConversationActionView({ onDecide: decideAction, details })
+const chatView = createChatView({ messages, tables: tableTools, details, onUsage: showSessionUsage })
+const { addMessage, showUsage } = chatView
+function hasUnsaved() { return tableTools.hasUnsaved() || attachments.hasFiles() || details.hasUnsaved() }
+function updateHint() {
+  $('#table-hint').textContent = hasUnsaved() ? '有待发送的附件或表格。点击发送后处理并保存到当前对话。' : '可粘贴表格或拖入 Excel/CSV；附件在发送时自动上传解析。'
 }
+function showError(text) { $('#error').textContent = text; $('#error').hidden = false }
+prompt.addEventListener('paste', (event) => {
+  const text = event.clipboardData?.getData('text/plain') ?? ''
+  if (!busy && text.includes('\t') && text.includes('\n')) {
+    event.preventDefault(); $('#welcome').hidden = true
+    if (tableTools.extractPasted(text) === 'error') prompt.value = text
+  }
+})
+window.addEventListener('beforeunload', (event) => {
+  if (hasUnsaved()) { event.preventDefault(); event.returnValue = '' }
+})
 
 function setBusy(value) {
+  if (!value) {
+    const entry = $('#mche-entry')
+    entry.replaceChildren()
+    if (sessionId) entry.append(details.mche({ sessionId, view: 'requirements' }))
+    details.prune()
+  }
   busy = value
+  details.setBusy()
   sidebar.setBusy(value)
   $('#send').disabled = value || expired
+  actionView.setBusy(value, expired)
+  attachments.setBusy(value, expired)
+  tableTools.setBusy(value, expired)
   $('#new-chat').disabled = value
   $('#model-picker').disabled = value || Boolean(sessionId) || expired
   $('#model-picker-hint').textContent = sessionId ? '当前对话已固定模型；切换请新建对话。' : '仅用于本次新对话，不改变默认设置。'
-  prompt.disabled = value || expired
+  prompt.disabled = value
   $('#status').textContent = value ? '正在思考，请稍候…' : 'Enter 发送 · Shift + Enter 换行'
   messages.setAttribute('aria-busy', String(value))
 }
 
-const count = (value) => value === null || value === undefined ? '未提供' : value.toLocaleString()
-function showUsage(message, data) {
-  const row = document.createElement('div')
-  row.className = 'token-usage'
-  const usage = data.usage
-  row.textContent = usage?.reportedCalls ? `本轮 Token · 输入（非缓存）${count(usage.inputTokens)} · 输出 ${count(usage.outputTokens)} · 合计 ${count(usage.totalTokens)}${usage.complete ? '' : '（部分上报）'}` : '本轮 Token · 服务商未提供用量'
-  if (usage?.cacheReadTokens != null) row.textContent += ` · 缓存命中 ${count(usage.cacheReadTokens)}`
-  if (usage?.cacheWriteTokens != null) row.textContent += ` · 缓存写入 ${count(usage.cacheWriteTokens)}`
-  if (usage?.reasoningTokens != null) row.textContent += ` · 推理 ${count(usage.reasoningTokens)}`
-  message.append(row)
-  showSessionUsage(data)
-}
 function showSessionUsage(data) {
   const total = data.sessionUsage
   $('#token-total').textContent = count(total?.totalTokens)
@@ -73,39 +89,96 @@ function showSessionUsage(data) {
 
 form.addEventListener('submit', async (event) => {
   event.preventDefault()
-  const text = prompt.value.trim()
-  if (busy || expired || !text) return
-  $('#welcome').hidden = true
+  if (busy || expired) return
+  if (details.hasUnsaved()) { showError('请先保存方案或计算输入草稿，再发送消息。'); return }
+  let text = prompt.value.trim(), tables
+  try { tables = tableTools.draftTables() } catch (error) { showError(error.message); return }
+  if (!text && (tables.length || attachments.hasFiles())) text = '请阅读这些资料，并根据其中的数据与我继续对话。'
+  if (!text) { showError('请输入问题、粘贴表格或添加附件。'); return }
+  if (await sendMessage({ text, tables })) tableTools.clearDrafts()
+})
+
+async function sendMessage({ text, tables = [] }) {
+  if (busy || expired) return false
+  if (text.length > 8000) { showError('问题最多 8000 字，请缩短后发送'); return false }
+  let user, pending, replyCompleted = false
   $('#error').hidden = true
-  const user = addMessage('user', text)
-  const pending = addMessage('pending', '正在思考…')
-  prompt.value = ''
   setBusy(true)
   try {
-    const response = await fetch('/api/chat', {
-      method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ prompt: text, sessionId, projectId: sidebar.projectId(), choice: !sessionId && $('#model-picker').value ? JSON.parse($('#model-picker').value) : undefined }),
-    })
-    const data = await response.json()
-    if (data.sessionExpired) expired = true
-    if (!response.ok) throw new Error(data.error || '请求失败，请稍后再试')
+    if (attachments.hasFiles()) $('#status').textContent = '正在上传并解析附件…'
+    const choice = !sessionId && $('#model-picker').value ? JSON.parse($('#model-picker').value) : undefined
+    if (attachments.hasFiles() && !sessionId) {
+      const prepared = await api('/api/session/prepare', { choice, projectId: sidebar.projectId() })
+      sessionId = prepared.sessionId; sidebar.select(sessionId)
+    }
+    const workbooks = attachments.hasFiles() ? await attachments.collectWorkbooks({ sessionId }) : []
+    const userText = encodeChatInput({ prompt: text, tables, workbooks })
+    $('#welcome').hidden = true
+    user = addMessage('user', userText)
+    pending = addMessage('pending', '正在思考…')
+    prompt.value = ''; $('#status').textContent = '正在思考，请稍候…'
+    const data = await requestReply('/api/chat', { prompt: text, tables, workbooks, sessionId, projectId: sidebar.projectId(),
+      choice: !sessionId && $('#model-picker').value ? JSON.parse($('#model-picker').value) : undefined }, pending)
     sessionId = data.sessionId
-    pending.remove()
-    showUsage(addMessage('assistant', data.finalResponse || '本轮未返回文字，请尝试换一种问法。'), data)
+    renderReply(data, pending)
+    replyCompleted = true
+    if (data.tableWarning) showError(data.tableWarning)
+    attachments.clear()
     sidebar.select(sessionId)
     await sidebar.refresh().catch(() => {})
+    return true
   } catch (error) {
-    pending.remove()
-    user.remove()
+    if (error.sessionExpired) expired = true
+    const received = chatView.fail(pending)
+    if (!received) user?.remove()
     $('#welcome').hidden = messages.childElementCount > 0
-    prompt.value = text
+    prompt.value = received ? '' : text
     $('#error').textContent = error instanceof TypeError ? '无法连接本地服务，请确认服务仍在运行。' : error.message
     $('#error').hidden = false
+    return false
   } finally {
     setBusy(false)
-    prompt.focus()
+    if (!replyCompleted || !chatView.openRequestedDetails(pending)) prompt.focus()
   }
-})
+}
+
+function renderReply(data, message = addMessage('pending', '')) {
+  actionView.render(chatView.complete(message, data), data.actions)
+  details.prune()
+  actionView.update(data.actionStates)
+  showUsage(message, data)
+}
+
+function requestReply(url, input, pending) {
+  return streamRequest(url, input, (event) => {
+    if (event.type === 'session') { sessionId = event.sessionId; sidebar.select(sessionId) }
+    else chatView.stream(pending, event)
+  })
+}
+
+async function decideAction(action, decision) {
+  if (busy || expired || !sessionId) return
+  if (hasUnsaved() || prompt.value.trim()) { showError('请先发送或清空待发送内容，再确认对话中的建议。'); return }
+  setBusy(true); $('#error').hidden = true
+  details.close()
+  const pending = addMessage('pending', '正在处理…')
+  let replyCompleted = false
+  $('#status').textContent = decision === 'confirm' ? `正在执行${action.title}…` : '正在记录你的选择…'
+  try {
+    const data = await requestReply('/api/actions/decide', { sessionId, id: action.id, decision }, pending)
+    if (data.userMessage) pending.before(addMessage('user', data.userMessage))
+    if (data.finalResponse) { renderReply(data, pending); replyCompleted = true }
+    else pending.remove()
+    actionView.update(data.actionStates)
+    await sidebar.refresh().catch(() => {})
+  } catch (error) {
+    await openSession(sessionId).catch(() => {})
+    showError(error.message)
+  } finally {
+    setBusy(false)
+    if (!replyCompleted || !chatView.openRequestedDetails(pending)) prompt.focus()
+  }
+}
 
 prompt.addEventListener('keydown', (event) => {
   if (event.key === 'Enter' && !event.shiftKey && !event.isComposing) {
@@ -115,6 +188,7 @@ prompt.addEventListener('keydown', (event) => {
 })
 async function newChat() {
   if (busy) return
+  if (hasUnsaved()) { showError('还有未发送的附件或表格，请先发送，或移除附件、放弃草稿。'); return }
   if (sessionId) {
     setBusy(true)
     try { await api('/api/session/close', { sessionId }) }
@@ -124,8 +198,9 @@ async function newChat() {
   $('#model-picker').value = ''
   sidebar.select(undefined)
   expired = false
+  mcheEditable = true
   setBusy(false)
-  messages.replaceChildren()
+  tableTools.reset(); actionView.reset(); details.reset(); messages.replaceChildren()
   $('#token-total').textContent = '—'
   $('#mobile-token-total').textContent = '当前会话 Token：—'
   $('#token-details').textContent = '发送消息后显示实际用量。'
@@ -145,14 +220,18 @@ async function openSession(id) {
   setBusy(true)
   try {
     const data = await api('/api/session/open', { sessionId: id })
-    messages.replaceChildren()
+    tableTools.reset(); actionView.reset(); details.reset(); messages.replaceChildren()
     sessionId = id
     expired = Boolean(data.readOnlyReason)
+    mcheEditable = Boolean(data.mcheWritable)
     $('#welcome').hidden = data.messages.length > 0
     $('#error').hidden = !expired
     $('#error').textContent = data.readOnlyReason
     for (const item of data.messages) {
-      const message = addMessage(item.role, item.text)
+      const message = addMessage(item.role, item.role === 'assistant' ? '' : item.text)
+      if (item.role === 'assistant') chatView.complete(message, { ...item, finalResponse: item.text })
+      actionView.render(message.querySelector('.message-body'), item.actions)
+      if (item.incomplete) { message.dataset.received = 'true'; chatView.fail(message) }
       if (item.role === 'assistant') showUsage(message, { ...data, usage: item.usage })
     }
     showSessionUsage(data)

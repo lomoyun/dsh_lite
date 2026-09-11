@@ -1,0 +1,5224 @@
+{
+  "schemaVersion": 1,
+  "catalogId": "refrigerants",
+  "count": 61,
+  "fields": {
+    "sequence": {
+      "column": "A",
+      "label": "序号",
+      "unit": null,
+      "headerCell": "A2"
+    },
+    "category": {
+      "column": "B",
+      "label": "类别",
+      "unit": null,
+      "headerCell": "B2"
+    },
+    "name": {
+      "column": "C",
+      "label": "介质标识",
+      "unit": null,
+      "headerCell": "C2"
+    },
+    "description": {
+      "column": "D",
+      "label": "介质说明",
+      "unit": null,
+      "headerCell": "D2"
+    },
+    "concentrationPercent": {
+      "column": "E",
+      "label": "浓度值(%)",
+      "unit": "%",
+      "headerCell": "E2",
+      "hidden": true
+    }
+  },
+  "categories": {
+    "refrigerant": "制冷剂",
+    "water": "载冷剂·水",
+    "eg": "载冷剂·乙二醇(EG)",
+    "pg": "载冷剂·丙二醇(PG)"
+  },
+  "concentrationBases": {
+    "volume": "体积浓度（Vol.）",
+    "mass": "质量浓度（Wt.）"
+  },
+  "categoryCounts": {
+    "refrigerant": 26,
+    "water": 1,
+    "eg": 19,
+    "pg": 15
+  },
+  "source": {
+    "path": "答复_/5-冷媒库.xlsx",
+    "bytes": 13353,
+    "sha256": "ef2987e4328be020eff7e1c9a8beedff88ed68b9d0b8460780a6d63fe909cb66",
+    "sheet": "冷媒清单",
+    "indexedRange": "A1:E63",
+    "hidden": 0,
+    "merges": [
+      "A1:E1"
+    ],
+    "columns": [
+      {
+        "width": 8,
+        "customwidth": "1",
+        "wpx": 48,
+        "wch": 7.17,
+        "MDW": 6
+      },
+      {
+        "width": 22,
+        "customwidth": "1",
+        "wpx": 132,
+        "wch": 21.17,
+        "MDW": 6
+      },
+      {
+        "width": 16,
+        "customwidth": "1",
+        "wpx": 96,
+        "wch": 15.17,
+        "MDW": 6
+      },
+      {
+        "width": 30.25,
+        "bestFit": "1",
+        "bestfit": "1",
+        "customwidth": "1",
+        "wpx": 181,
+        "wch": 29.33,
+        "MDW": 6
+      },
+      {
+        "width": 12,
+        "hidden": true,
+        "customwidth": "1",
+        "wpx": 72,
+        "wch": 11.17,
+        "MDW": 6
+      }
+    ],
+    "headers": {
+      "A1": {
+        "cell": "A1",
+        "raw": "冷媒 / 载冷剂清单梳理（共 61 项）",
+        "display": "冷媒 / 载冷剂清单梳理（共 61 项）",
+        "formula": null,
+        "cached": null,
+        "type": "s",
+        "format": "General",
+        "comments": [],
+        "hyperlink": null
+      },
+      "B1": {
+        "cell": "B1",
+        "raw": null,
+        "display": "",
+        "formula": null,
+        "cached": null,
+        "type": "z",
+        "format": "General",
+        "comments": [],
+        "hyperlink": null
+      },
+      "C1": {
+        "cell": "C1",
+        "raw": null,
+        "display": "",
+        "formula": null,
+        "cached": null,
+        "type": "z",
+        "format": "General",
+        "comments": [],
+        "hyperlink": null
+      },
+      "D1": {
+        "cell": "D1",
+        "raw": null,
+        "display": "",
+        "formula": null,
+        "cached": null,
+        "type": "z",
+        "format": "General",
+        "comments": [],
+        "hyperlink": null
+      },
+      "E1": {
+        "cell": "E1",
+        "raw": null,
+        "display": "",
+        "formula": null,
+        "cached": null,
+        "type": "z",
+        "format": "General",
+        "comments": [],
+        "hyperlink": null
+      },
+      "A2": {
+        "cell": "A2",
+        "raw": "序号",
+        "display": "序号",
+        "formula": null,
+        "cached": null,
+        "type": "s",
+        "format": "General",
+        "comments": [],
+        "hyperlink": null
+      },
+      "B2": {
+        "cell": "B2",
+        "raw": "类别",
+        "display": "类别",
+        "formula": null,
+        "cached": null,
+        "type": "s",
+        "format": "General",
+        "comments": [],
+        "hyperlink": null
+      },
+      "C2": {
+        "cell": "C2",
+        "raw": "介质标识",
+        "display": "介质标识",
+        "formula": null,
+        "cached": null,
+        "type": "s",
+        "format": "General",
+        "comments": [],
+        "hyperlink": null
+      },
+      "D2": {
+        "cell": "D2",
+        "raw": "介质说明",
+        "display": "介质说明",
+        "formula": null,
+        "cached": null,
+        "type": "s",
+        "format": "General",
+        "comments": [],
+        "hyperlink": null
+      },
+      "E2": {
+        "cell": "E2",
+        "raw": "浓度值(%)",
+        "display": "浓度值(%)",
+        "formula": null,
+        "cached": null,
+        "type": "s",
+        "format": "General",
+        "comments": [],
+        "hyperlink": null
+      }
+    },
+    "issues": []
+  },
+  "bySequence": {
+    "1": "R134a",
+    "2": "R22",
+    "3": "R290",
+    "4": "R32",
+    "5": "R404A",
+    "6": "R407C",
+    "7": "R407H",
+    "8": "R410A",
+    "9": "R448A",
+    "10": "R449A",
+    "11": "R452A",
+    "12": "R452B",
+    "13": "R454B",
+    "14": "R454C",
+    "15": "R455A",
+    "16": "R466A",
+    "17": "R507A",
+    "18": "R513A",
+    "19": "R1234yf",
+    "20": "R1234zez",
+    "21": "R1233zde",
+    "22": "R1234zee",
+    "23": "R515A",
+    "24": "R515B",
+    "25": "R600a",
+    "26": "CO2",
+    "27": "WATER",
+    "28": "EG30Vol.",
+    "29": "EG35Vol.",
+    "30": "EG40Vol.",
+    "31": "EG45Vol.",
+    "32": "EG50Vol.",
+    "33": "EG55Vol.",
+    "34": "EG60Vol.",
+    "35": "EG10Wt.",
+    "36": "EG15Wt.",
+    "37": "EG20Wt.",
+    "38": "EG22Wt.",
+    "39": "EG25Wt.",
+    "40": "EG30Wt.",
+    "41": "EG35Wt.",
+    "42": "EG40Wt.",
+    "43": "EG45Wt.",
+    "44": "EG50Wt.",
+    "45": "EG55Wt.",
+    "46": "EG60Wt.",
+    "47": "PROPYLEN",
+    "48": "PG10Vol.",
+    "49": "PG15Vol.",
+    "50": "PG20Vol.",
+    "51": "PG25Vol.",
+    "52": "PG30Vol.",
+    "53": "PG35Vol.",
+    "54": "PG40Vol.",
+    "55": "PG45Vol.",
+    "56": "PG50Vol.",
+    "57": "PG55Vol.",
+    "58": "PG60Vol.",
+    "59": "PG35Wt.",
+    "60": "PG40Wt.",
+    "61": "PG45Wt."
+  },
+  "byName": {
+    "R134a": {
+      "sequence": 1,
+      "category": "制冷剂",
+      "name": "R134a",
+      "description": "制冷剂",
+      "concentrationPercent": null,
+      "categoryKey": "refrigerant",
+      "concentrationBasis": null,
+      "concentrationBasisSource": null,
+      "sourceRange": "A3:E3",
+      "evidence": {
+        "sequence": {
+          "cell": "A3",
+          "raw": 1,
+          "display": "1",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B3",
+          "raw": "制冷剂",
+          "display": "制冷剂",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C3",
+          "raw": "R134a",
+          "display": "R134a",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D3",
+          "raw": "制冷剂",
+          "display": "制冷剂",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E3",
+          "raw": null,
+          "display": "",
+          "formula": null,
+          "cached": null,
+          "type": "z",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "concentration_not_provided",
+          "cell": "E3",
+          "message": "原表未提供浓度，不补成0%或100%"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "R22": {
+      "sequence": 2,
+      "category": "制冷剂",
+      "name": "R22",
+      "description": "制冷剂",
+      "concentrationPercent": null,
+      "categoryKey": "refrigerant",
+      "concentrationBasis": null,
+      "concentrationBasisSource": null,
+      "sourceRange": "A4:E4",
+      "evidence": {
+        "sequence": {
+          "cell": "A4",
+          "raw": 2,
+          "display": "2",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B4",
+          "raw": "制冷剂",
+          "display": "制冷剂",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C4",
+          "raw": "R22",
+          "display": "R22",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D4",
+          "raw": "制冷剂",
+          "display": "制冷剂",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E4",
+          "raw": null,
+          "display": "",
+          "formula": null,
+          "cached": null,
+          "type": "z",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "concentration_not_provided",
+          "cell": "E4",
+          "message": "原表未提供浓度，不补成0%或100%"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "R290": {
+      "sequence": 3,
+      "category": "制冷剂",
+      "name": "R290",
+      "description": "制冷剂",
+      "concentrationPercent": null,
+      "categoryKey": "refrigerant",
+      "concentrationBasis": null,
+      "concentrationBasisSource": null,
+      "sourceRange": "A5:E5",
+      "evidence": {
+        "sequence": {
+          "cell": "A5",
+          "raw": 3,
+          "display": "3",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B5",
+          "raw": "制冷剂",
+          "display": "制冷剂",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C5",
+          "raw": "R290",
+          "display": "R290",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D5",
+          "raw": "制冷剂",
+          "display": "制冷剂",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E5",
+          "raw": null,
+          "display": "",
+          "formula": null,
+          "cached": null,
+          "type": "z",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "concentration_not_provided",
+          "cell": "E5",
+          "message": "原表未提供浓度，不补成0%或100%"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "R32": {
+      "sequence": 4,
+      "category": "制冷剂",
+      "name": "R32",
+      "description": "制冷剂",
+      "concentrationPercent": null,
+      "categoryKey": "refrigerant",
+      "concentrationBasis": null,
+      "concentrationBasisSource": null,
+      "sourceRange": "A6:E6",
+      "evidence": {
+        "sequence": {
+          "cell": "A6",
+          "raw": 4,
+          "display": "4",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B6",
+          "raw": "制冷剂",
+          "display": "制冷剂",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C6",
+          "raw": "R32",
+          "display": "R32",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D6",
+          "raw": "制冷剂",
+          "display": "制冷剂",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E6",
+          "raw": null,
+          "display": "",
+          "formula": null,
+          "cached": null,
+          "type": "z",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "concentration_not_provided",
+          "cell": "E6",
+          "message": "原表未提供浓度，不补成0%或100%"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "R404A": {
+      "sequence": 5,
+      "category": "制冷剂",
+      "name": "R404A",
+      "description": "制冷剂",
+      "concentrationPercent": null,
+      "categoryKey": "refrigerant",
+      "concentrationBasis": null,
+      "concentrationBasisSource": null,
+      "sourceRange": "A7:E7",
+      "evidence": {
+        "sequence": {
+          "cell": "A7",
+          "raw": 5,
+          "display": "5",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B7",
+          "raw": "制冷剂",
+          "display": "制冷剂",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C7",
+          "raw": "R404A",
+          "display": "R404A",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D7",
+          "raw": "制冷剂",
+          "display": "制冷剂",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E7",
+          "raw": null,
+          "display": "",
+          "formula": null,
+          "cached": null,
+          "type": "z",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "concentration_not_provided",
+          "cell": "E7",
+          "message": "原表未提供浓度，不补成0%或100%"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "R407C": {
+      "sequence": 6,
+      "category": "制冷剂",
+      "name": "R407C",
+      "description": "制冷剂",
+      "concentrationPercent": null,
+      "categoryKey": "refrigerant",
+      "concentrationBasis": null,
+      "concentrationBasisSource": null,
+      "sourceRange": "A8:E8",
+      "evidence": {
+        "sequence": {
+          "cell": "A8",
+          "raw": 6,
+          "display": "6",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B8",
+          "raw": "制冷剂",
+          "display": "制冷剂",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C8",
+          "raw": "R407C",
+          "display": "R407C",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D8",
+          "raw": "制冷剂",
+          "display": "制冷剂",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E8",
+          "raw": null,
+          "display": "",
+          "formula": null,
+          "cached": null,
+          "type": "z",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "concentration_not_provided",
+          "cell": "E8",
+          "message": "原表未提供浓度，不补成0%或100%"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "R407H": {
+      "sequence": 7,
+      "category": "制冷剂",
+      "name": "R407H",
+      "description": "制冷剂",
+      "concentrationPercent": null,
+      "categoryKey": "refrigerant",
+      "concentrationBasis": null,
+      "concentrationBasisSource": null,
+      "sourceRange": "A9:E9",
+      "evidence": {
+        "sequence": {
+          "cell": "A9",
+          "raw": 7,
+          "display": "7",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B9",
+          "raw": "制冷剂",
+          "display": "制冷剂",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C9",
+          "raw": "R407H",
+          "display": "R407H",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D9",
+          "raw": "制冷剂",
+          "display": "制冷剂",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E9",
+          "raw": null,
+          "display": "",
+          "formula": null,
+          "cached": null,
+          "type": "z",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "concentration_not_provided",
+          "cell": "E9",
+          "message": "原表未提供浓度，不补成0%或100%"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "R410A": {
+      "sequence": 8,
+      "category": "制冷剂",
+      "name": "R410A",
+      "description": "制冷剂",
+      "concentrationPercent": null,
+      "categoryKey": "refrigerant",
+      "concentrationBasis": null,
+      "concentrationBasisSource": null,
+      "sourceRange": "A10:E10",
+      "evidence": {
+        "sequence": {
+          "cell": "A10",
+          "raw": 8,
+          "display": "8",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B10",
+          "raw": "制冷剂",
+          "display": "制冷剂",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C10",
+          "raw": "R410A",
+          "display": "R410A",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D10",
+          "raw": "制冷剂",
+          "display": "制冷剂",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E10",
+          "raw": null,
+          "display": "",
+          "formula": null,
+          "cached": null,
+          "type": "z",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "concentration_not_provided",
+          "cell": "E10",
+          "message": "原表未提供浓度，不补成0%或100%"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "R448A": {
+      "sequence": 9,
+      "category": "制冷剂",
+      "name": "R448A",
+      "description": "制冷剂",
+      "concentrationPercent": null,
+      "categoryKey": "refrigerant",
+      "concentrationBasis": null,
+      "concentrationBasisSource": null,
+      "sourceRange": "A11:E11",
+      "evidence": {
+        "sequence": {
+          "cell": "A11",
+          "raw": 9,
+          "display": "9",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B11",
+          "raw": "制冷剂",
+          "display": "制冷剂",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C11",
+          "raw": "R448A",
+          "display": "R448A",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D11",
+          "raw": "制冷剂",
+          "display": "制冷剂",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E11",
+          "raw": null,
+          "display": "",
+          "formula": null,
+          "cached": null,
+          "type": "z",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "concentration_not_provided",
+          "cell": "E11",
+          "message": "原表未提供浓度，不补成0%或100%"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "R449A": {
+      "sequence": 10,
+      "category": "制冷剂",
+      "name": "R449A",
+      "description": "制冷剂",
+      "concentrationPercent": null,
+      "categoryKey": "refrigerant",
+      "concentrationBasis": null,
+      "concentrationBasisSource": null,
+      "sourceRange": "A12:E12",
+      "evidence": {
+        "sequence": {
+          "cell": "A12",
+          "raw": 10,
+          "display": "10",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B12",
+          "raw": "制冷剂",
+          "display": "制冷剂",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C12",
+          "raw": "R449A",
+          "display": "R449A",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D12",
+          "raw": "制冷剂",
+          "display": "制冷剂",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E12",
+          "raw": null,
+          "display": "",
+          "formula": null,
+          "cached": null,
+          "type": "z",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "concentration_not_provided",
+          "cell": "E12",
+          "message": "原表未提供浓度，不补成0%或100%"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "R452A": {
+      "sequence": 11,
+      "category": "制冷剂",
+      "name": "R452A",
+      "description": "制冷剂",
+      "concentrationPercent": null,
+      "categoryKey": "refrigerant",
+      "concentrationBasis": null,
+      "concentrationBasisSource": null,
+      "sourceRange": "A13:E13",
+      "evidence": {
+        "sequence": {
+          "cell": "A13",
+          "raw": 11,
+          "display": "11",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B13",
+          "raw": "制冷剂",
+          "display": "制冷剂",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C13",
+          "raw": "R452A",
+          "display": "R452A",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D13",
+          "raw": "制冷剂",
+          "display": "制冷剂",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E13",
+          "raw": null,
+          "display": "",
+          "formula": null,
+          "cached": null,
+          "type": "z",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "concentration_not_provided",
+          "cell": "E13",
+          "message": "原表未提供浓度，不补成0%或100%"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "R452B": {
+      "sequence": 12,
+      "category": "制冷剂",
+      "name": "R452B",
+      "description": "制冷剂",
+      "concentrationPercent": null,
+      "categoryKey": "refrigerant",
+      "concentrationBasis": null,
+      "concentrationBasisSource": null,
+      "sourceRange": "A14:E14",
+      "evidence": {
+        "sequence": {
+          "cell": "A14",
+          "raw": 12,
+          "display": "12",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B14",
+          "raw": "制冷剂",
+          "display": "制冷剂",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C14",
+          "raw": "R452B",
+          "display": "R452B",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D14",
+          "raw": "制冷剂",
+          "display": "制冷剂",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E14",
+          "raw": null,
+          "display": "",
+          "formula": null,
+          "cached": null,
+          "type": "z",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "concentration_not_provided",
+          "cell": "E14",
+          "message": "原表未提供浓度，不补成0%或100%"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "R454B": {
+      "sequence": 13,
+      "category": "制冷剂",
+      "name": "R454B",
+      "description": "制冷剂",
+      "concentrationPercent": null,
+      "categoryKey": "refrigerant",
+      "concentrationBasis": null,
+      "concentrationBasisSource": null,
+      "sourceRange": "A15:E15",
+      "evidence": {
+        "sequence": {
+          "cell": "A15",
+          "raw": 13,
+          "display": "13",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B15",
+          "raw": "制冷剂",
+          "display": "制冷剂",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C15",
+          "raw": "R454B",
+          "display": "R454B",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D15",
+          "raw": "制冷剂",
+          "display": "制冷剂",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E15",
+          "raw": null,
+          "display": "",
+          "formula": null,
+          "cached": null,
+          "type": "z",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "concentration_not_provided",
+          "cell": "E15",
+          "message": "原表未提供浓度，不补成0%或100%"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "R454C": {
+      "sequence": 14,
+      "category": "制冷剂",
+      "name": "R454C",
+      "description": "制冷剂",
+      "concentrationPercent": null,
+      "categoryKey": "refrigerant",
+      "concentrationBasis": null,
+      "concentrationBasisSource": null,
+      "sourceRange": "A16:E16",
+      "evidence": {
+        "sequence": {
+          "cell": "A16",
+          "raw": 14,
+          "display": "14",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B16",
+          "raw": "制冷剂",
+          "display": "制冷剂",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C16",
+          "raw": "R454C",
+          "display": "R454C",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D16",
+          "raw": "制冷剂",
+          "display": "制冷剂",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E16",
+          "raw": null,
+          "display": "",
+          "formula": null,
+          "cached": null,
+          "type": "z",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "concentration_not_provided",
+          "cell": "E16",
+          "message": "原表未提供浓度，不补成0%或100%"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "R455A": {
+      "sequence": 15,
+      "category": "制冷剂",
+      "name": "R455A",
+      "description": "制冷剂",
+      "concentrationPercent": null,
+      "categoryKey": "refrigerant",
+      "concentrationBasis": null,
+      "concentrationBasisSource": null,
+      "sourceRange": "A17:E17",
+      "evidence": {
+        "sequence": {
+          "cell": "A17",
+          "raw": 15,
+          "display": "15",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B17",
+          "raw": "制冷剂",
+          "display": "制冷剂",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C17",
+          "raw": "R455A",
+          "display": "R455A",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D17",
+          "raw": "制冷剂",
+          "display": "制冷剂",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E17",
+          "raw": null,
+          "display": "",
+          "formula": null,
+          "cached": null,
+          "type": "z",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "concentration_not_provided",
+          "cell": "E17",
+          "message": "原表未提供浓度，不补成0%或100%"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "R466A": {
+      "sequence": 16,
+      "category": "制冷剂",
+      "name": "R466A",
+      "description": "制冷剂",
+      "concentrationPercent": null,
+      "categoryKey": "refrigerant",
+      "concentrationBasis": null,
+      "concentrationBasisSource": null,
+      "sourceRange": "A18:E18",
+      "evidence": {
+        "sequence": {
+          "cell": "A18",
+          "raw": 16,
+          "display": "16",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B18",
+          "raw": "制冷剂",
+          "display": "制冷剂",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C18",
+          "raw": "R466A",
+          "display": "R466A",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D18",
+          "raw": "制冷剂",
+          "display": "制冷剂",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E18",
+          "raw": null,
+          "display": "",
+          "formula": null,
+          "cached": null,
+          "type": "z",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "concentration_not_provided",
+          "cell": "E18",
+          "message": "原表未提供浓度，不补成0%或100%"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "R507A": {
+      "sequence": 17,
+      "category": "制冷剂",
+      "name": "R507A",
+      "description": "制冷剂",
+      "concentrationPercent": null,
+      "categoryKey": "refrigerant",
+      "concentrationBasis": null,
+      "concentrationBasisSource": null,
+      "sourceRange": "A19:E19",
+      "evidence": {
+        "sequence": {
+          "cell": "A19",
+          "raw": 17,
+          "display": "17",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B19",
+          "raw": "制冷剂",
+          "display": "制冷剂",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C19",
+          "raw": "R507A",
+          "display": "R507A",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D19",
+          "raw": "制冷剂",
+          "display": "制冷剂",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E19",
+          "raw": null,
+          "display": "",
+          "formula": null,
+          "cached": null,
+          "type": "z",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "concentration_not_provided",
+          "cell": "E19",
+          "message": "原表未提供浓度，不补成0%或100%"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "R513A": {
+      "sequence": 18,
+      "category": "制冷剂",
+      "name": "R513A",
+      "description": "制冷剂",
+      "concentrationPercent": null,
+      "categoryKey": "refrigerant",
+      "concentrationBasis": null,
+      "concentrationBasisSource": null,
+      "sourceRange": "A20:E20",
+      "evidence": {
+        "sequence": {
+          "cell": "A20",
+          "raw": 18,
+          "display": "18",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B20",
+          "raw": "制冷剂",
+          "display": "制冷剂",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C20",
+          "raw": "R513A",
+          "display": "R513A",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D20",
+          "raw": "制冷剂",
+          "display": "制冷剂",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E20",
+          "raw": null,
+          "display": "",
+          "formula": null,
+          "cached": null,
+          "type": "z",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "concentration_not_provided",
+          "cell": "E20",
+          "message": "原表未提供浓度，不补成0%或100%"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "R1234yf": {
+      "sequence": 19,
+      "category": "制冷剂",
+      "name": "R1234yf",
+      "description": "制冷剂",
+      "concentrationPercent": null,
+      "categoryKey": "refrigerant",
+      "concentrationBasis": null,
+      "concentrationBasisSource": null,
+      "sourceRange": "A21:E21",
+      "evidence": {
+        "sequence": {
+          "cell": "A21",
+          "raw": 19,
+          "display": "19",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B21",
+          "raw": "制冷剂",
+          "display": "制冷剂",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C21",
+          "raw": "R1234yf",
+          "display": "R1234yf",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D21",
+          "raw": "制冷剂",
+          "display": "制冷剂",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E21",
+          "raw": null,
+          "display": "",
+          "formula": null,
+          "cached": null,
+          "type": "z",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "concentration_not_provided",
+          "cell": "E21",
+          "message": "原表未提供浓度，不补成0%或100%"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "R1234zez": {
+      "sequence": 20,
+      "category": "制冷剂",
+      "name": "R1234zez",
+      "description": "制冷剂",
+      "concentrationPercent": null,
+      "categoryKey": "refrigerant",
+      "concentrationBasis": null,
+      "concentrationBasisSource": null,
+      "sourceRange": "A22:E22",
+      "evidence": {
+        "sequence": {
+          "cell": "A22",
+          "raw": 20,
+          "display": "20",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B22",
+          "raw": "制冷剂",
+          "display": "制冷剂",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C22",
+          "raw": "R1234zez",
+          "display": "R1234zez",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D22",
+          "raw": "制冷剂",
+          "display": "制冷剂",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E22",
+          "raw": null,
+          "display": "",
+          "formula": null,
+          "cached": null,
+          "type": "z",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "concentration_not_provided",
+          "cell": "E22",
+          "message": "原表未提供浓度，不补成0%或100%"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "R1233zde": {
+      "sequence": 21,
+      "category": "制冷剂",
+      "name": "R1233zde",
+      "description": "制冷剂",
+      "concentrationPercent": null,
+      "categoryKey": "refrigerant",
+      "concentrationBasis": null,
+      "concentrationBasisSource": null,
+      "sourceRange": "A23:E23",
+      "evidence": {
+        "sequence": {
+          "cell": "A23",
+          "raw": 21,
+          "display": "21",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B23",
+          "raw": "制冷剂",
+          "display": "制冷剂",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C23",
+          "raw": "R1233zde",
+          "display": "R1233zde",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D23",
+          "raw": "制冷剂",
+          "display": "制冷剂",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E23",
+          "raw": null,
+          "display": "",
+          "formula": null,
+          "cached": null,
+          "type": "z",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "concentration_not_provided",
+          "cell": "E23",
+          "message": "原表未提供浓度，不补成0%或100%"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "R1234zee": {
+      "sequence": 22,
+      "category": "制冷剂",
+      "name": "R1234zee",
+      "description": "制冷剂",
+      "concentrationPercent": null,
+      "categoryKey": "refrigerant",
+      "concentrationBasis": null,
+      "concentrationBasisSource": null,
+      "sourceRange": "A24:E24",
+      "evidence": {
+        "sequence": {
+          "cell": "A24",
+          "raw": 22,
+          "display": "22",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B24",
+          "raw": "制冷剂",
+          "display": "制冷剂",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C24",
+          "raw": "R1234zee",
+          "display": "R1234zee",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D24",
+          "raw": "制冷剂",
+          "display": "制冷剂",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E24",
+          "raw": null,
+          "display": "",
+          "formula": null,
+          "cached": null,
+          "type": "z",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "concentration_not_provided",
+          "cell": "E24",
+          "message": "原表未提供浓度，不补成0%或100%"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "R515A": {
+      "sequence": 23,
+      "category": "制冷剂",
+      "name": "R515A",
+      "description": "制冷剂",
+      "concentrationPercent": null,
+      "categoryKey": "refrigerant",
+      "concentrationBasis": null,
+      "concentrationBasisSource": null,
+      "sourceRange": "A25:E25",
+      "evidence": {
+        "sequence": {
+          "cell": "A25",
+          "raw": 23,
+          "display": "23",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B25",
+          "raw": "制冷剂",
+          "display": "制冷剂",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C25",
+          "raw": "R515A",
+          "display": "R515A",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D25",
+          "raw": "制冷剂",
+          "display": "制冷剂",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E25",
+          "raw": null,
+          "display": "",
+          "formula": null,
+          "cached": null,
+          "type": "z",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "concentration_not_provided",
+          "cell": "E25",
+          "message": "原表未提供浓度，不补成0%或100%"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "R515B": {
+      "sequence": 24,
+      "category": "制冷剂",
+      "name": "R515B",
+      "description": "制冷剂",
+      "concentrationPercent": null,
+      "categoryKey": "refrigerant",
+      "concentrationBasis": null,
+      "concentrationBasisSource": null,
+      "sourceRange": "A26:E26",
+      "evidence": {
+        "sequence": {
+          "cell": "A26",
+          "raw": 24,
+          "display": "24",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B26",
+          "raw": "制冷剂",
+          "display": "制冷剂",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C26",
+          "raw": "R515B",
+          "display": "R515B",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D26",
+          "raw": "制冷剂",
+          "display": "制冷剂",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E26",
+          "raw": null,
+          "display": "",
+          "formula": null,
+          "cached": null,
+          "type": "z",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "concentration_not_provided",
+          "cell": "E26",
+          "message": "原表未提供浓度，不补成0%或100%"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "R600a": {
+      "sequence": 25,
+      "category": "制冷剂",
+      "name": "R600a",
+      "description": "制冷剂",
+      "concentrationPercent": null,
+      "categoryKey": "refrigerant",
+      "concentrationBasis": null,
+      "concentrationBasisSource": null,
+      "sourceRange": "A27:E27",
+      "evidence": {
+        "sequence": {
+          "cell": "A27",
+          "raw": 25,
+          "display": "25",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B27",
+          "raw": "制冷剂",
+          "display": "制冷剂",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C27",
+          "raw": "R600a",
+          "display": "R600a",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D27",
+          "raw": "制冷剂",
+          "display": "制冷剂",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E27",
+          "raw": null,
+          "display": "",
+          "formula": null,
+          "cached": null,
+          "type": "z",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "concentration_not_provided",
+          "cell": "E27",
+          "message": "原表未提供浓度，不补成0%或100%"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "CO2": {
+      "sequence": 26,
+      "category": "制冷剂",
+      "name": "CO2",
+      "description": "制冷剂",
+      "concentrationPercent": null,
+      "categoryKey": "refrigerant",
+      "concentrationBasis": null,
+      "concentrationBasisSource": null,
+      "sourceRange": "A28:E28",
+      "evidence": {
+        "sequence": {
+          "cell": "A28",
+          "raw": 26,
+          "display": "26",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B28",
+          "raw": "制冷剂",
+          "display": "制冷剂",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C28",
+          "raw": "CO2",
+          "display": "CO2",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D28",
+          "raw": "制冷剂",
+          "display": "制冷剂",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E28",
+          "raw": null,
+          "display": "",
+          "formula": null,
+          "cached": null,
+          "type": "z",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "concentration_not_provided",
+          "cell": "E28",
+          "message": "原表未提供浓度，不补成0%或100%"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "WATER": {
+      "sequence": 27,
+      "category": "载冷剂·水",
+      "name": "WATER",
+      "description": "水",
+      "concentrationPercent": null,
+      "categoryKey": "water",
+      "concentrationBasis": null,
+      "concentrationBasisSource": null,
+      "sourceRange": "A29:E29",
+      "evidence": {
+        "sequence": {
+          "cell": "A29",
+          "raw": 27,
+          "display": "27",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B29",
+          "raw": "载冷剂·水",
+          "display": "载冷剂·水",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C29",
+          "raw": "WATER",
+          "display": "WATER",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D29",
+          "raw": "水",
+          "display": "水",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E29",
+          "raw": null,
+          "display": "",
+          "formula": null,
+          "cached": null,
+          "type": "z",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "concentration_not_provided",
+          "cell": "E29",
+          "message": "原表未提供浓度，不补成0%或100%"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "EG30Vol.": {
+      "sequence": 28,
+      "category": "载冷剂·乙二醇(EG)",
+      "name": "EG30Vol.",
+      "description": "乙二醇水溶液 (Ethylene Glycol)",
+      "concentrationPercent": 30,
+      "categoryKey": "eg",
+      "concentrationBasis": "volume",
+      "concentrationBasisSource": "C30",
+      "sourceRange": "A30:E30",
+      "evidence": {
+        "sequence": {
+          "cell": "A30",
+          "raw": 28,
+          "display": "28",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B30",
+          "raw": "载冷剂·乙二醇(EG)",
+          "display": "载冷剂·乙二醇(EG)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C30",
+          "raw": "EG30Vol.",
+          "display": "EG30Vol.",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D30",
+          "raw": "乙二醇水溶液 (Ethylene Glycol)",
+          "display": "乙二醇水溶液 (Ethylene Glycol)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E30",
+          "raw": 30,
+          "display": "30",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "0",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "basis_from_identifier",
+          "cell": "C30",
+          "message": "浓度基准按介质标识中的Vol./Wt.区分，不互换或换算；隐藏E列保留原浓度百分数"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "EG35Vol.": {
+      "sequence": 29,
+      "category": "载冷剂·乙二醇(EG)",
+      "name": "EG35Vol.",
+      "description": "乙二醇水溶液 (Ethylene Glycol)",
+      "concentrationPercent": 35,
+      "categoryKey": "eg",
+      "concentrationBasis": "volume",
+      "concentrationBasisSource": "C31",
+      "sourceRange": "A31:E31",
+      "evidence": {
+        "sequence": {
+          "cell": "A31",
+          "raw": 29,
+          "display": "29",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B31",
+          "raw": "载冷剂·乙二醇(EG)",
+          "display": "载冷剂·乙二醇(EG)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C31",
+          "raw": "EG35Vol.",
+          "display": "EG35Vol.",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D31",
+          "raw": "乙二醇水溶液 (Ethylene Glycol)",
+          "display": "乙二醇水溶液 (Ethylene Glycol)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E31",
+          "raw": 35,
+          "display": "35",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "0",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "basis_from_identifier",
+          "cell": "C31",
+          "message": "浓度基准按介质标识中的Vol./Wt.区分，不互换或换算；隐藏E列保留原浓度百分数"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "EG40Vol.": {
+      "sequence": 30,
+      "category": "载冷剂·乙二醇(EG)",
+      "name": "EG40Vol.",
+      "description": "乙二醇水溶液 (Ethylene Glycol)",
+      "concentrationPercent": 40,
+      "categoryKey": "eg",
+      "concentrationBasis": "volume",
+      "concentrationBasisSource": "C32",
+      "sourceRange": "A32:E32",
+      "evidence": {
+        "sequence": {
+          "cell": "A32",
+          "raw": 30,
+          "display": "30",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B32",
+          "raw": "载冷剂·乙二醇(EG)",
+          "display": "载冷剂·乙二醇(EG)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C32",
+          "raw": "EG40Vol.",
+          "display": "EG40Vol.",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D32",
+          "raw": "乙二醇水溶液 (Ethylene Glycol)",
+          "display": "乙二醇水溶液 (Ethylene Glycol)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E32",
+          "raw": 40,
+          "display": "40",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "0",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "basis_from_identifier",
+          "cell": "C32",
+          "message": "浓度基准按介质标识中的Vol./Wt.区分，不互换或换算；隐藏E列保留原浓度百分数"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "EG45Vol.": {
+      "sequence": 31,
+      "category": "载冷剂·乙二醇(EG)",
+      "name": "EG45Vol.",
+      "description": "乙二醇水溶液 (Ethylene Glycol)",
+      "concentrationPercent": 45,
+      "categoryKey": "eg",
+      "concentrationBasis": "volume",
+      "concentrationBasisSource": "C33",
+      "sourceRange": "A33:E33",
+      "evidence": {
+        "sequence": {
+          "cell": "A33",
+          "raw": 31,
+          "display": "31",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B33",
+          "raw": "载冷剂·乙二醇(EG)",
+          "display": "载冷剂·乙二醇(EG)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C33",
+          "raw": "EG45Vol.",
+          "display": "EG45Vol.",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D33",
+          "raw": "乙二醇水溶液 (Ethylene Glycol)",
+          "display": "乙二醇水溶液 (Ethylene Glycol)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E33",
+          "raw": 45,
+          "display": "45",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "0",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "basis_from_identifier",
+          "cell": "C33",
+          "message": "浓度基准按介质标识中的Vol./Wt.区分，不互换或换算；隐藏E列保留原浓度百分数"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "EG50Vol.": {
+      "sequence": 32,
+      "category": "载冷剂·乙二醇(EG)",
+      "name": "EG50Vol.",
+      "description": "乙二醇水溶液 (Ethylene Glycol)",
+      "concentrationPercent": 50,
+      "categoryKey": "eg",
+      "concentrationBasis": "volume",
+      "concentrationBasisSource": "C34",
+      "sourceRange": "A34:E34",
+      "evidence": {
+        "sequence": {
+          "cell": "A34",
+          "raw": 32,
+          "display": "32",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B34",
+          "raw": "载冷剂·乙二醇(EG)",
+          "display": "载冷剂·乙二醇(EG)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C34",
+          "raw": "EG50Vol.",
+          "display": "EG50Vol.",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D34",
+          "raw": "乙二醇水溶液 (Ethylene Glycol)",
+          "display": "乙二醇水溶液 (Ethylene Glycol)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E34",
+          "raw": 50,
+          "display": "50",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "0",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "basis_from_identifier",
+          "cell": "C34",
+          "message": "浓度基准按介质标识中的Vol./Wt.区分，不互换或换算；隐藏E列保留原浓度百分数"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "EG55Vol.": {
+      "sequence": 33,
+      "category": "载冷剂·乙二醇(EG)",
+      "name": "EG55Vol.",
+      "description": "乙二醇水溶液 (Ethylene Glycol)",
+      "concentrationPercent": 55,
+      "categoryKey": "eg",
+      "concentrationBasis": "volume",
+      "concentrationBasisSource": "C35",
+      "sourceRange": "A35:E35",
+      "evidence": {
+        "sequence": {
+          "cell": "A35",
+          "raw": 33,
+          "display": "33",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B35",
+          "raw": "载冷剂·乙二醇(EG)",
+          "display": "载冷剂·乙二醇(EG)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C35",
+          "raw": "EG55Vol.",
+          "display": "EG55Vol.",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D35",
+          "raw": "乙二醇水溶液 (Ethylene Glycol)",
+          "display": "乙二醇水溶液 (Ethylene Glycol)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E35",
+          "raw": 55,
+          "display": "55",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "0",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "basis_from_identifier",
+          "cell": "C35",
+          "message": "浓度基准按介质标识中的Vol./Wt.区分，不互换或换算；隐藏E列保留原浓度百分数"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "EG60Vol.": {
+      "sequence": 34,
+      "category": "载冷剂·乙二醇(EG)",
+      "name": "EG60Vol.",
+      "description": "乙二醇水溶液 (Ethylene Glycol)",
+      "concentrationPercent": 60,
+      "categoryKey": "eg",
+      "concentrationBasis": "volume",
+      "concentrationBasisSource": "C36",
+      "sourceRange": "A36:E36",
+      "evidence": {
+        "sequence": {
+          "cell": "A36",
+          "raw": 34,
+          "display": "34",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B36",
+          "raw": "载冷剂·乙二醇(EG)",
+          "display": "载冷剂·乙二醇(EG)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C36",
+          "raw": "EG60Vol.",
+          "display": "EG60Vol.",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D36",
+          "raw": "乙二醇水溶液 (Ethylene Glycol)",
+          "display": "乙二醇水溶液 (Ethylene Glycol)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E36",
+          "raw": 60,
+          "display": "60",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "0",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "basis_from_identifier",
+          "cell": "C36",
+          "message": "浓度基准按介质标识中的Vol./Wt.区分，不互换或换算；隐藏E列保留原浓度百分数"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "EG10Wt.": {
+      "sequence": 35,
+      "category": "载冷剂·乙二醇(EG)",
+      "name": "EG10Wt.",
+      "description": "乙二醇水溶液 (Ethylene Glycol)",
+      "concentrationPercent": 10,
+      "categoryKey": "eg",
+      "concentrationBasis": "mass",
+      "concentrationBasisSource": "C37",
+      "sourceRange": "A37:E37",
+      "evidence": {
+        "sequence": {
+          "cell": "A37",
+          "raw": 35,
+          "display": "35",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B37",
+          "raw": "载冷剂·乙二醇(EG)",
+          "display": "载冷剂·乙二醇(EG)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C37",
+          "raw": "EG10Wt.",
+          "display": "EG10Wt.",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D37",
+          "raw": "乙二醇水溶液 (Ethylene Glycol)",
+          "display": "乙二醇水溶液 (Ethylene Glycol)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E37",
+          "raw": 10,
+          "display": "10",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "0",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "basis_from_identifier",
+          "cell": "C37",
+          "message": "浓度基准按介质标识中的Vol./Wt.区分，不互换或换算；隐藏E列保留原浓度百分数"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "EG15Wt.": {
+      "sequence": 36,
+      "category": "载冷剂·乙二醇(EG)",
+      "name": "EG15Wt.",
+      "description": "乙二醇水溶液 (Ethylene Glycol)",
+      "concentrationPercent": 15,
+      "categoryKey": "eg",
+      "concentrationBasis": "mass",
+      "concentrationBasisSource": "C38",
+      "sourceRange": "A38:E38",
+      "evidence": {
+        "sequence": {
+          "cell": "A38",
+          "raw": 36,
+          "display": "36",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B38",
+          "raw": "载冷剂·乙二醇(EG)",
+          "display": "载冷剂·乙二醇(EG)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C38",
+          "raw": "EG15Wt.",
+          "display": "EG15Wt.",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D38",
+          "raw": "乙二醇水溶液 (Ethylene Glycol)",
+          "display": "乙二醇水溶液 (Ethylene Glycol)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E38",
+          "raw": 15,
+          "display": "15",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "0",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "basis_from_identifier",
+          "cell": "C38",
+          "message": "浓度基准按介质标识中的Vol./Wt.区分，不互换或换算；隐藏E列保留原浓度百分数"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "EG20Wt.": {
+      "sequence": 37,
+      "category": "载冷剂·乙二醇(EG)",
+      "name": "EG20Wt.",
+      "description": "乙二醇水溶液 (Ethylene Glycol)",
+      "concentrationPercent": 20,
+      "categoryKey": "eg",
+      "concentrationBasis": "mass",
+      "concentrationBasisSource": "C39",
+      "sourceRange": "A39:E39",
+      "evidence": {
+        "sequence": {
+          "cell": "A39",
+          "raw": 37,
+          "display": "37",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B39",
+          "raw": "载冷剂·乙二醇(EG)",
+          "display": "载冷剂·乙二醇(EG)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C39",
+          "raw": "EG20Wt.",
+          "display": "EG20Wt.",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D39",
+          "raw": "乙二醇水溶液 (Ethylene Glycol)",
+          "display": "乙二醇水溶液 (Ethylene Glycol)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E39",
+          "raw": 20,
+          "display": "20",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "0",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "basis_from_identifier",
+          "cell": "C39",
+          "message": "浓度基准按介质标识中的Vol./Wt.区分，不互换或换算；隐藏E列保留原浓度百分数"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "EG22Wt.": {
+      "sequence": 38,
+      "category": "载冷剂·乙二醇(EG)",
+      "name": "EG22Wt.",
+      "description": "乙二醇水溶液 (Ethylene Glycol)",
+      "concentrationPercent": 22,
+      "categoryKey": "eg",
+      "concentrationBasis": "mass",
+      "concentrationBasisSource": "C40",
+      "sourceRange": "A40:E40",
+      "evidence": {
+        "sequence": {
+          "cell": "A40",
+          "raw": 38,
+          "display": "38",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B40",
+          "raw": "载冷剂·乙二醇(EG)",
+          "display": "载冷剂·乙二醇(EG)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C40",
+          "raw": "EG22Wt.",
+          "display": "EG22Wt.",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D40",
+          "raw": "乙二醇水溶液 (Ethylene Glycol)",
+          "display": "乙二醇水溶液 (Ethylene Glycol)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E40",
+          "raw": 22,
+          "display": "22",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "0",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "basis_from_identifier",
+          "cell": "C40",
+          "message": "浓度基准按介质标识中的Vol./Wt.区分，不互换或换算；隐藏E列保留原浓度百分数"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "EG25Wt.": {
+      "sequence": 39,
+      "category": "载冷剂·乙二醇(EG)",
+      "name": "EG25Wt.",
+      "description": "乙二醇水溶液 (Ethylene Glycol)",
+      "concentrationPercent": 25,
+      "categoryKey": "eg",
+      "concentrationBasis": "mass",
+      "concentrationBasisSource": "C41",
+      "sourceRange": "A41:E41",
+      "evidence": {
+        "sequence": {
+          "cell": "A41",
+          "raw": 39,
+          "display": "39",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B41",
+          "raw": "载冷剂·乙二醇(EG)",
+          "display": "载冷剂·乙二醇(EG)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C41",
+          "raw": "EG25Wt.",
+          "display": "EG25Wt.",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D41",
+          "raw": "乙二醇水溶液 (Ethylene Glycol)",
+          "display": "乙二醇水溶液 (Ethylene Glycol)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E41",
+          "raw": 25,
+          "display": "25",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "0",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "basis_from_identifier",
+          "cell": "C41",
+          "message": "浓度基准按介质标识中的Vol./Wt.区分，不互换或换算；隐藏E列保留原浓度百分数"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "EG30Wt.": {
+      "sequence": 40,
+      "category": "载冷剂·乙二醇(EG)",
+      "name": "EG30Wt.",
+      "description": "乙二醇水溶液 (Ethylene Glycol)",
+      "concentrationPercent": 30,
+      "categoryKey": "eg",
+      "concentrationBasis": "mass",
+      "concentrationBasisSource": "C42",
+      "sourceRange": "A42:E42",
+      "evidence": {
+        "sequence": {
+          "cell": "A42",
+          "raw": 40,
+          "display": "40",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B42",
+          "raw": "载冷剂·乙二醇(EG)",
+          "display": "载冷剂·乙二醇(EG)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C42",
+          "raw": "EG30Wt.",
+          "display": "EG30Wt.",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D42",
+          "raw": "乙二醇水溶液 (Ethylene Glycol)",
+          "display": "乙二醇水溶液 (Ethylene Glycol)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E42",
+          "raw": 30,
+          "display": "30",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "0",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "basis_from_identifier",
+          "cell": "C42",
+          "message": "浓度基准按介质标识中的Vol./Wt.区分，不互换或换算；隐藏E列保留原浓度百分数"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "EG35Wt.": {
+      "sequence": 41,
+      "category": "载冷剂·乙二醇(EG)",
+      "name": "EG35Wt.",
+      "description": "乙二醇水溶液 (Ethylene Glycol)",
+      "concentrationPercent": 35,
+      "categoryKey": "eg",
+      "concentrationBasis": "mass",
+      "concentrationBasisSource": "C43",
+      "sourceRange": "A43:E43",
+      "evidence": {
+        "sequence": {
+          "cell": "A43",
+          "raw": 41,
+          "display": "41",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B43",
+          "raw": "载冷剂·乙二醇(EG)",
+          "display": "载冷剂·乙二醇(EG)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C43",
+          "raw": "EG35Wt.",
+          "display": "EG35Wt.",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D43",
+          "raw": "乙二醇水溶液 (Ethylene Glycol)",
+          "display": "乙二醇水溶液 (Ethylene Glycol)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E43",
+          "raw": 35,
+          "display": "35",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "0",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "basis_from_identifier",
+          "cell": "C43",
+          "message": "浓度基准按介质标识中的Vol./Wt.区分，不互换或换算；隐藏E列保留原浓度百分数"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "EG40Wt.": {
+      "sequence": 42,
+      "category": "载冷剂·乙二醇(EG)",
+      "name": "EG40Wt.",
+      "description": "乙二醇水溶液 (Ethylene Glycol)",
+      "concentrationPercent": 40,
+      "categoryKey": "eg",
+      "concentrationBasis": "mass",
+      "concentrationBasisSource": "C44",
+      "sourceRange": "A44:E44",
+      "evidence": {
+        "sequence": {
+          "cell": "A44",
+          "raw": 42,
+          "display": "42",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B44",
+          "raw": "载冷剂·乙二醇(EG)",
+          "display": "载冷剂·乙二醇(EG)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C44",
+          "raw": "EG40Wt.",
+          "display": "EG40Wt.",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D44",
+          "raw": "乙二醇水溶液 (Ethylene Glycol)",
+          "display": "乙二醇水溶液 (Ethylene Glycol)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E44",
+          "raw": 40,
+          "display": "40",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "0",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "basis_from_identifier",
+          "cell": "C44",
+          "message": "浓度基准按介质标识中的Vol./Wt.区分，不互换或换算；隐藏E列保留原浓度百分数"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "EG45Wt.": {
+      "sequence": 43,
+      "category": "载冷剂·乙二醇(EG)",
+      "name": "EG45Wt.",
+      "description": "乙二醇水溶液 (Ethylene Glycol)",
+      "concentrationPercent": 45,
+      "categoryKey": "eg",
+      "concentrationBasis": "mass",
+      "concentrationBasisSource": "C45",
+      "sourceRange": "A45:E45",
+      "evidence": {
+        "sequence": {
+          "cell": "A45",
+          "raw": 43,
+          "display": "43",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B45",
+          "raw": "载冷剂·乙二醇(EG)",
+          "display": "载冷剂·乙二醇(EG)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C45",
+          "raw": "EG45Wt.",
+          "display": "EG45Wt.",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D45",
+          "raw": "乙二醇水溶液 (Ethylene Glycol)",
+          "display": "乙二醇水溶液 (Ethylene Glycol)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E45",
+          "raw": 45,
+          "display": "45",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "0",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "basis_from_identifier",
+          "cell": "C45",
+          "message": "浓度基准按介质标识中的Vol./Wt.区分，不互换或换算；隐藏E列保留原浓度百分数"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "EG50Wt.": {
+      "sequence": 44,
+      "category": "载冷剂·乙二醇(EG)",
+      "name": "EG50Wt.",
+      "description": "乙二醇水溶液 (Ethylene Glycol)",
+      "concentrationPercent": 50,
+      "categoryKey": "eg",
+      "concentrationBasis": "mass",
+      "concentrationBasisSource": "C46",
+      "sourceRange": "A46:E46",
+      "evidence": {
+        "sequence": {
+          "cell": "A46",
+          "raw": 44,
+          "display": "44",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B46",
+          "raw": "载冷剂·乙二醇(EG)",
+          "display": "载冷剂·乙二醇(EG)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C46",
+          "raw": "EG50Wt.",
+          "display": "EG50Wt.",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D46",
+          "raw": "乙二醇水溶液 (Ethylene Glycol)",
+          "display": "乙二醇水溶液 (Ethylene Glycol)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E46",
+          "raw": 50,
+          "display": "50",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "0",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "basis_from_identifier",
+          "cell": "C46",
+          "message": "浓度基准按介质标识中的Vol./Wt.区分，不互换或换算；隐藏E列保留原浓度百分数"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "EG55Wt.": {
+      "sequence": 45,
+      "category": "载冷剂·乙二醇(EG)",
+      "name": "EG55Wt.",
+      "description": "乙二醇水溶液 (Ethylene Glycol)",
+      "concentrationPercent": 55,
+      "categoryKey": "eg",
+      "concentrationBasis": "mass",
+      "concentrationBasisSource": "C47",
+      "sourceRange": "A47:E47",
+      "evidence": {
+        "sequence": {
+          "cell": "A47",
+          "raw": 45,
+          "display": "45",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B47",
+          "raw": "载冷剂·乙二醇(EG)",
+          "display": "载冷剂·乙二醇(EG)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C47",
+          "raw": "EG55Wt.",
+          "display": "EG55Wt.",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D47",
+          "raw": "乙二醇水溶液 (Ethylene Glycol)",
+          "display": "乙二醇水溶液 (Ethylene Glycol)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E47",
+          "raw": 55,
+          "display": "55",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "0",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "basis_from_identifier",
+          "cell": "C47",
+          "message": "浓度基准按介质标识中的Vol./Wt.区分，不互换或换算；隐藏E列保留原浓度百分数"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "EG60Wt.": {
+      "sequence": 46,
+      "category": "载冷剂·乙二醇(EG)",
+      "name": "EG60Wt.",
+      "description": "乙二醇水溶液 (Ethylene Glycol)",
+      "concentrationPercent": 60,
+      "categoryKey": "eg",
+      "concentrationBasis": "mass",
+      "concentrationBasisSource": "C48",
+      "sourceRange": "A48:E48",
+      "evidence": {
+        "sequence": {
+          "cell": "A48",
+          "raw": 46,
+          "display": "46",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B48",
+          "raw": "载冷剂·乙二醇(EG)",
+          "display": "载冷剂·乙二醇(EG)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C48",
+          "raw": "EG60Wt.",
+          "display": "EG60Wt.",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D48",
+          "raw": "乙二醇水溶液 (Ethylene Glycol)",
+          "display": "乙二醇水溶液 (Ethylene Glycol)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E48",
+          "raw": 60,
+          "display": "60",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "0",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "basis_from_identifier",
+          "cell": "C48",
+          "message": "浓度基准按介质标识中的Vol./Wt.区分，不互换或换算；隐藏E列保留原浓度百分数"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "PROPYLEN": {
+      "sequence": 47,
+      "category": "载冷剂·丙二醇(PG)",
+      "name": "PROPYLEN",
+      "description": "丙二醇 (Propylene Glycol)",
+      "concentrationPercent": null,
+      "categoryKey": "pg",
+      "concentrationBasis": null,
+      "concentrationBasisSource": null,
+      "sourceRange": "A49:E49",
+      "evidence": {
+        "sequence": {
+          "cell": "A49",
+          "raw": 47,
+          "display": "47",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B49",
+          "raw": "载冷剂·丙二醇(PG)",
+          "display": "载冷剂·丙二醇(PG)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C49",
+          "raw": "PROPYLEN",
+          "display": "PROPYLEN",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D49",
+          "raw": "丙二醇 (Propylene Glycol)",
+          "display": "丙二醇 (Propylene Glycol)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E49",
+          "raw": null,
+          "display": "",
+          "formula": null,
+          "cached": null,
+          "type": "z",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "concentration_not_provided",
+          "cell": "E49",
+          "message": "原表未提供浓度，不补成0%或100%"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "PG10Vol.": {
+      "sequence": 48,
+      "category": "载冷剂·丙二醇(PG)",
+      "name": "PG10Vol.",
+      "description": "丙二醇水溶液 (Propylene Glycol)",
+      "concentrationPercent": 10,
+      "categoryKey": "pg",
+      "concentrationBasis": "volume",
+      "concentrationBasisSource": "C50",
+      "sourceRange": "A50:E50",
+      "evidence": {
+        "sequence": {
+          "cell": "A50",
+          "raw": 48,
+          "display": "48",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B50",
+          "raw": "载冷剂·丙二醇(PG)",
+          "display": "载冷剂·丙二醇(PG)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C50",
+          "raw": "PG10Vol.",
+          "display": "PG10Vol.",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D50",
+          "raw": "丙二醇水溶液 (Propylene Glycol)",
+          "display": "丙二醇水溶液 (Propylene Glycol)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E50",
+          "raw": 10,
+          "display": "10",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "0",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "basis_from_identifier",
+          "cell": "C50",
+          "message": "浓度基准按介质标识中的Vol./Wt.区分，不互换或换算；隐藏E列保留原浓度百分数"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "PG15Vol.": {
+      "sequence": 49,
+      "category": "载冷剂·丙二醇(PG)",
+      "name": "PG15Vol.",
+      "description": "丙二醇水溶液 (Propylene Glycol)",
+      "concentrationPercent": 15,
+      "categoryKey": "pg",
+      "concentrationBasis": "volume",
+      "concentrationBasisSource": "C51",
+      "sourceRange": "A51:E51",
+      "evidence": {
+        "sequence": {
+          "cell": "A51",
+          "raw": 49,
+          "display": "49",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B51",
+          "raw": "载冷剂·丙二醇(PG)",
+          "display": "载冷剂·丙二醇(PG)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C51",
+          "raw": "PG15Vol.",
+          "display": "PG15Vol.",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D51",
+          "raw": "丙二醇水溶液 (Propylene Glycol)",
+          "display": "丙二醇水溶液 (Propylene Glycol)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E51",
+          "raw": 15,
+          "display": "15",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "0",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "basis_from_identifier",
+          "cell": "C51",
+          "message": "浓度基准按介质标识中的Vol./Wt.区分，不互换或换算；隐藏E列保留原浓度百分数"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "PG20Vol.": {
+      "sequence": 50,
+      "category": "载冷剂·丙二醇(PG)",
+      "name": "PG20Vol.",
+      "description": "丙二醇水溶液 (Propylene Glycol)",
+      "concentrationPercent": 20,
+      "categoryKey": "pg",
+      "concentrationBasis": "volume",
+      "concentrationBasisSource": "C52",
+      "sourceRange": "A52:E52",
+      "evidence": {
+        "sequence": {
+          "cell": "A52",
+          "raw": 50,
+          "display": "50",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B52",
+          "raw": "载冷剂·丙二醇(PG)",
+          "display": "载冷剂·丙二醇(PG)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C52",
+          "raw": "PG20Vol.",
+          "display": "PG20Vol.",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D52",
+          "raw": "丙二醇水溶液 (Propylene Glycol)",
+          "display": "丙二醇水溶液 (Propylene Glycol)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E52",
+          "raw": 20,
+          "display": "20",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "0",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "basis_from_identifier",
+          "cell": "C52",
+          "message": "浓度基准按介质标识中的Vol./Wt.区分，不互换或换算；隐藏E列保留原浓度百分数"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "PG25Vol.": {
+      "sequence": 51,
+      "category": "载冷剂·丙二醇(PG)",
+      "name": "PG25Vol.",
+      "description": "丙二醇水溶液 (Propylene Glycol)",
+      "concentrationPercent": 25,
+      "categoryKey": "pg",
+      "concentrationBasis": "volume",
+      "concentrationBasisSource": "C53",
+      "sourceRange": "A53:E53",
+      "evidence": {
+        "sequence": {
+          "cell": "A53",
+          "raw": 51,
+          "display": "51",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B53",
+          "raw": "载冷剂·丙二醇(PG)",
+          "display": "载冷剂·丙二醇(PG)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C53",
+          "raw": "PG25Vol.",
+          "display": "PG25Vol.",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D53",
+          "raw": "丙二醇水溶液 (Propylene Glycol)",
+          "display": "丙二醇水溶液 (Propylene Glycol)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E53",
+          "raw": 25,
+          "display": "25",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "0",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "basis_from_identifier",
+          "cell": "C53",
+          "message": "浓度基准按介质标识中的Vol./Wt.区分，不互换或换算；隐藏E列保留原浓度百分数"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "PG30Vol.": {
+      "sequence": 52,
+      "category": "载冷剂·丙二醇(PG)",
+      "name": "PG30Vol.",
+      "description": "丙二醇水溶液 (Propylene Glycol)",
+      "concentrationPercent": 30,
+      "categoryKey": "pg",
+      "concentrationBasis": "volume",
+      "concentrationBasisSource": "C54",
+      "sourceRange": "A54:E54",
+      "evidence": {
+        "sequence": {
+          "cell": "A54",
+          "raw": 52,
+          "display": "52",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B54",
+          "raw": "载冷剂·丙二醇(PG)",
+          "display": "载冷剂·丙二醇(PG)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C54",
+          "raw": "PG30Vol.",
+          "display": "PG30Vol.",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D54",
+          "raw": "丙二醇水溶液 (Propylene Glycol)",
+          "display": "丙二醇水溶液 (Propylene Glycol)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E54",
+          "raw": 30,
+          "display": "30",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "0",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "basis_from_identifier",
+          "cell": "C54",
+          "message": "浓度基准按介质标识中的Vol./Wt.区分，不互换或换算；隐藏E列保留原浓度百分数"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "PG35Vol.": {
+      "sequence": 53,
+      "category": "载冷剂·丙二醇(PG)",
+      "name": "PG35Vol.",
+      "description": "丙二醇水溶液 (Propylene Glycol)",
+      "concentrationPercent": 35,
+      "categoryKey": "pg",
+      "concentrationBasis": "volume",
+      "concentrationBasisSource": "C55",
+      "sourceRange": "A55:E55",
+      "evidence": {
+        "sequence": {
+          "cell": "A55",
+          "raw": 53,
+          "display": "53",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B55",
+          "raw": "载冷剂·丙二醇(PG)",
+          "display": "载冷剂·丙二醇(PG)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C55",
+          "raw": "PG35Vol.",
+          "display": "PG35Vol.",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D55",
+          "raw": "丙二醇水溶液 (Propylene Glycol)",
+          "display": "丙二醇水溶液 (Propylene Glycol)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E55",
+          "raw": 35,
+          "display": "35",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "0",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "basis_from_identifier",
+          "cell": "C55",
+          "message": "浓度基准按介质标识中的Vol./Wt.区分，不互换或换算；隐藏E列保留原浓度百分数"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "PG40Vol.": {
+      "sequence": 54,
+      "category": "载冷剂·丙二醇(PG)",
+      "name": "PG40Vol.",
+      "description": "丙二醇水溶液 (Propylene Glycol)",
+      "concentrationPercent": 40,
+      "categoryKey": "pg",
+      "concentrationBasis": "volume",
+      "concentrationBasisSource": "C56",
+      "sourceRange": "A56:E56",
+      "evidence": {
+        "sequence": {
+          "cell": "A56",
+          "raw": 54,
+          "display": "54",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B56",
+          "raw": "载冷剂·丙二醇(PG)",
+          "display": "载冷剂·丙二醇(PG)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C56",
+          "raw": "PG40Vol.",
+          "display": "PG40Vol.",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D56",
+          "raw": "丙二醇水溶液 (Propylene Glycol)",
+          "display": "丙二醇水溶液 (Propylene Glycol)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E56",
+          "raw": 40,
+          "display": "40",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "0",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "basis_from_identifier",
+          "cell": "C56",
+          "message": "浓度基准按介质标识中的Vol./Wt.区分，不互换或换算；隐藏E列保留原浓度百分数"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "PG45Vol.": {
+      "sequence": 55,
+      "category": "载冷剂·丙二醇(PG)",
+      "name": "PG45Vol.",
+      "description": "丙二醇水溶液 (Propylene Glycol)",
+      "concentrationPercent": 45,
+      "categoryKey": "pg",
+      "concentrationBasis": "volume",
+      "concentrationBasisSource": "C57",
+      "sourceRange": "A57:E57",
+      "evidence": {
+        "sequence": {
+          "cell": "A57",
+          "raw": 55,
+          "display": "55",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B57",
+          "raw": "载冷剂·丙二醇(PG)",
+          "display": "载冷剂·丙二醇(PG)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C57",
+          "raw": "PG45Vol.",
+          "display": "PG45Vol.",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D57",
+          "raw": "丙二醇水溶液 (Propylene Glycol)",
+          "display": "丙二醇水溶液 (Propylene Glycol)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E57",
+          "raw": 45,
+          "display": "45",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "0",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "basis_from_identifier",
+          "cell": "C57",
+          "message": "浓度基准按介质标识中的Vol./Wt.区分，不互换或换算；隐藏E列保留原浓度百分数"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "PG50Vol.": {
+      "sequence": 56,
+      "category": "载冷剂·丙二醇(PG)",
+      "name": "PG50Vol.",
+      "description": "丙二醇水溶液 (Propylene Glycol)",
+      "concentrationPercent": 50,
+      "categoryKey": "pg",
+      "concentrationBasis": "volume",
+      "concentrationBasisSource": "C58",
+      "sourceRange": "A58:E58",
+      "evidence": {
+        "sequence": {
+          "cell": "A58",
+          "raw": 56,
+          "display": "56",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B58",
+          "raw": "载冷剂·丙二醇(PG)",
+          "display": "载冷剂·丙二醇(PG)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C58",
+          "raw": "PG50Vol.",
+          "display": "PG50Vol.",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D58",
+          "raw": "丙二醇水溶液 (Propylene Glycol)",
+          "display": "丙二醇水溶液 (Propylene Glycol)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E58",
+          "raw": 50,
+          "display": "50",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "0",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "basis_from_identifier",
+          "cell": "C58",
+          "message": "浓度基准按介质标识中的Vol./Wt.区分，不互换或换算；隐藏E列保留原浓度百分数"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "PG55Vol.": {
+      "sequence": 57,
+      "category": "载冷剂·丙二醇(PG)",
+      "name": "PG55Vol.",
+      "description": "丙二醇水溶液 (Propylene Glycol)",
+      "concentrationPercent": 55,
+      "categoryKey": "pg",
+      "concentrationBasis": "volume",
+      "concentrationBasisSource": "C59",
+      "sourceRange": "A59:E59",
+      "evidence": {
+        "sequence": {
+          "cell": "A59",
+          "raw": 57,
+          "display": "57",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B59",
+          "raw": "载冷剂·丙二醇(PG)",
+          "display": "载冷剂·丙二醇(PG)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C59",
+          "raw": "PG55Vol.",
+          "display": "PG55Vol.",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D59",
+          "raw": "丙二醇水溶液 (Propylene Glycol)",
+          "display": "丙二醇水溶液 (Propylene Glycol)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E59",
+          "raw": 55,
+          "display": "55",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "0",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "basis_from_identifier",
+          "cell": "C59",
+          "message": "浓度基准按介质标识中的Vol./Wt.区分，不互换或换算；隐藏E列保留原浓度百分数"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "PG60Vol.": {
+      "sequence": 58,
+      "category": "载冷剂·丙二醇(PG)",
+      "name": "PG60Vol.",
+      "description": "丙二醇水溶液 (Propylene Glycol)",
+      "concentrationPercent": 60,
+      "categoryKey": "pg",
+      "concentrationBasis": "volume",
+      "concentrationBasisSource": "C60",
+      "sourceRange": "A60:E60",
+      "evidence": {
+        "sequence": {
+          "cell": "A60",
+          "raw": 58,
+          "display": "58",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B60",
+          "raw": "载冷剂·丙二醇(PG)",
+          "display": "载冷剂·丙二醇(PG)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C60",
+          "raw": "PG60Vol.",
+          "display": "PG60Vol.",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D60",
+          "raw": "丙二醇水溶液 (Propylene Glycol)",
+          "display": "丙二醇水溶液 (Propylene Glycol)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E60",
+          "raw": 60,
+          "display": "60",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "0",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "basis_from_identifier",
+          "cell": "C60",
+          "message": "浓度基准按介质标识中的Vol./Wt.区分，不互换或换算；隐藏E列保留原浓度百分数"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "PG35Wt.": {
+      "sequence": 59,
+      "category": "载冷剂·丙二醇(PG)",
+      "name": "PG35Wt.",
+      "description": "丙二醇水溶液 (Propylene Glycol)",
+      "concentrationPercent": 35,
+      "categoryKey": "pg",
+      "concentrationBasis": "mass",
+      "concentrationBasisSource": "C61",
+      "sourceRange": "A61:E61",
+      "evidence": {
+        "sequence": {
+          "cell": "A61",
+          "raw": 59,
+          "display": "59",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B61",
+          "raw": "载冷剂·丙二醇(PG)",
+          "display": "载冷剂·丙二醇(PG)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C61",
+          "raw": "PG35Wt.",
+          "display": "PG35Wt.",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D61",
+          "raw": "丙二醇水溶液 (Propylene Glycol)",
+          "display": "丙二醇水溶液 (Propylene Glycol)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E61",
+          "raw": 35,
+          "display": "35",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "0",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "basis_from_identifier",
+          "cell": "C61",
+          "message": "浓度基准按介质标识中的Vol./Wt.区分，不互换或换算；隐藏E列保留原浓度百分数"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "PG40Wt.": {
+      "sequence": 60,
+      "category": "载冷剂·丙二醇(PG)",
+      "name": "PG40Wt.",
+      "description": "丙二醇水溶液 (Propylene Glycol)",
+      "concentrationPercent": 40,
+      "categoryKey": "pg",
+      "concentrationBasis": "mass",
+      "concentrationBasisSource": "C62",
+      "sourceRange": "A62:E62",
+      "evidence": {
+        "sequence": {
+          "cell": "A62",
+          "raw": 60,
+          "display": "60",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B62",
+          "raw": "载冷剂·丙二醇(PG)",
+          "display": "载冷剂·丙二醇(PG)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C62",
+          "raw": "PG40Wt.",
+          "display": "PG40Wt.",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D62",
+          "raw": "丙二醇水溶液 (Propylene Glycol)",
+          "display": "丙二醇水溶液 (Propylene Glycol)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E62",
+          "raw": 40,
+          "display": "40",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "0",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "basis_from_identifier",
+          "cell": "C62",
+          "message": "浓度基准按介质标识中的Vol./Wt.区分，不互换或换算；隐藏E列保留原浓度百分数"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    },
+    "PG45Wt.": {
+      "sequence": 61,
+      "category": "载冷剂·丙二醇(PG)",
+      "name": "PG45Wt.",
+      "description": "丙二醇水溶液 (Propylene Glycol)",
+      "concentrationPercent": 45,
+      "categoryKey": "pg",
+      "concentrationBasis": "mass",
+      "concentrationBasisSource": "C63",
+      "sourceRange": "A63:E63",
+      "evidence": {
+        "sequence": {
+          "cell": "A63",
+          "raw": 61,
+          "display": "61",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "category": {
+          "cell": "B63",
+          "raw": "载冷剂·丙二醇(PG)",
+          "display": "载冷剂·丙二醇(PG)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "name": {
+          "cell": "C63",
+          "raw": "PG45Wt.",
+          "display": "PG45Wt.",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "description": {
+          "cell": "D63",
+          "raw": "丙二醇水溶液 (Propylene Glycol)",
+          "display": "丙二醇水溶液 (Propylene Glycol)",
+          "formula": null,
+          "cached": null,
+          "type": "s",
+          "format": "General",
+          "comments": [],
+          "hyperlink": null
+        },
+        "concentrationPercent": {
+          "cell": "E63",
+          "raw": 45,
+          "display": "45",
+          "formula": null,
+          "cached": null,
+          "type": "n",
+          "format": "0",
+          "comments": [],
+          "hyperlink": null
+        }
+      },
+      "review": [
+        {
+          "code": "basis_from_identifier",
+          "cell": "C63",
+          "message": "浓度基准按介质标识中的Vol./Wt.区分，不互换或换算；隐藏E列保留原浓度百分数"
+        },
+        {
+          "code": "property_mapping_unverified",
+          "message": "目录未提供物性、适用工况或DLL映射；原表序号不是已验证的DLL编码"
+        }
+      ],
+      "propertyMappingReady": false,
+      "calculationReady": false
+    }
+  }
+}

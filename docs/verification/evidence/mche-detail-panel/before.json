@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "checks": [
+    "baseline screenshots from preserved pre-change frontend"
+  ],
+  "errors": [],
+  "writes": [],
+  "at": "2026-09-11T08:56:31.504Z",
+  "provider": "deterministic local fixture"
+}

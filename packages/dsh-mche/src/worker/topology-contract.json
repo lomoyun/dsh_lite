@@ -1,0 +1,19 @@
+{
+  "id": "mche.condenser.multi_row.ptm.v1",
+  "mapperVersion": 1,
+  "extends": "mche.condenser.single_row.ptm.v1",
+  "schemaVersion": 1,
+  "maxRows": 5,
+  "maxPassesPerRow": 6,
+  "maxTubesPerRow": 500,
+  "headerColumns": ["globalStartTube", "globalEndTube", "refrigerantDirection", "zeroBasedRowIndex"],
+  "nodes": "inlet=0, passes=1..N in physical row/pass order, outlet=N+1",
+  "connections": ["series", "parallel"],
+  "tubeStride": 14,
+  "finStride": 10,
+  "uniformTube": "row counts equal: BUNITUBE=1 and first block; otherwise BUNITUBE=0 and full block per row",
+  "uniformFin": "shared fin: BUNIFIN=1 and first block",
+  "engineeringVerified": false,
+  "parallelDistributionVerified": false,
+  "verificationNote": "Output slots 42/43 are non-finite in the current DLL. Parallel distribution algorithm is absent from supplied caller sources. No assumed equal-flow allocation."
+}

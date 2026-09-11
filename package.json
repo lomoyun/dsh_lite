@@ -11,7 +11,7 @@
     "start": "node scripts/start.mjs",
     "cli": "tsx src/index.ts",
     "plugin": "node scripts/start.mjs plugin",
-    "test": "node --test packages/dsh-model-config/test/*.test.js packages/dsh-lite-web-app/test/*.test.js packages/dsh-prompt-config/test/*.test.js packages/dsh-workspace/test/*.test.js",
+    "test": "node --test packages/dsh-model-config/test/*.test.js packages/dsh-lite-web-app/test/*.test.js packages/dsh-prompt-config/test/*.test.js packages/dsh-workspace/test/*.test.js packages/dsh-excel-understanding/test/*.test.js packages/dsh-mche/test/*.test.js",
     "typecheck": "tsc --noEmit",
     "config:dump": "node scripts/start.mjs --dump-config"
   },
@@ -24,7 +24,9 @@
     "@deepseek-ai/dsh": "0.1.2-rc.1",
     "@deepseek-ai/dsh-sdk-client": "0.1.2-rc.1",
     "react": "18.3.1",
-    "react-dom": "18.3.1"
+    "react-dom": "18.3.1",
+    "@dsh-lite/excel-understanding": "workspace:*",
+    "@dsh-lite/mche": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^22.20.0",

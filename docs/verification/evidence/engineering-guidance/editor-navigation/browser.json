@@ -1,0 +1,37 @@
+{
+  "passed": true,
+  "at": "2026-09-11T07:27:50.741Z",
+  "provider": "deterministic local fixture",
+  "checks": [
+    "空管数/方向的单流程随当前回复自动打开；对话侧无动画；工程版本与确认状态不变",
+    "历史恢复只保留可点击入口，不自动弹窗；鼠标和键盘可重开",
+    "普通说明不触发导航；流式期间手动打开再关闭，回复结束不强行重开",
+    "过期会话、失败结果和未保存草稿不自动导航；重复事件仅打开一次",
+    "新会话自动打开自己的空结构；390px窄屏无页面横向溢出"
+  ],
+  "guarded": {
+    "stale": false,
+    "failed": false,
+    "dirty": false,
+    "kept": true,
+    "noLateOpen": false,
+    "first": true,
+    "repeated": false,
+    "dismissed": false,
+    "closed": true,
+    "opens": 1
+  },
+  "errors": [],
+  "requests": [
+    "/api/mche/case",
+    "/api/mche/case",
+    "/api/mche/case",
+    "/api/mche/case",
+    "/api/mche/case",
+    "/api/mche/case"
+  ],
+  "sessionIsolation": {
+    "initial": "bb5aaf13-26e7-43ab-8852-eb7edb061886",
+    "fresh": "3ea43638-23fe-439e-9ffa-a392c0f90810"
+  }
+}

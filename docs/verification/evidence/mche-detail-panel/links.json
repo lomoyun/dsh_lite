@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "checks": [
+    "全部旧视图、三种精确型号/目录及指定proposalId仍正确定位",
+    "指定真实失败任务可见，其他任务折叠，完整原生输出与日志可访问；显式动画入口直接放大",
+    "版本冲突保留本地未保存值，候选过期禁用，会话切换拒绝写入"
+  ],
+  "errors": [],
+  "runs": [
+    {
+      "runId": "feed13b8-5f23-4729-b9ee-5809cd82798b",
+      "status": "failed"
+    },
+    {
+      "runId": "b1447a57-b790-42d4-abaf-989561e6de1c",
+      "status": "failed"
+    }
+  ],
+  "at": "2026-09-11T09:18:58.486Z",
+  "syntheticEngineeringInputs": true
+}

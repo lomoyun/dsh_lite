@@ -10,6 +10,10 @@ import { setTimeout as delay } from 'node:timers/promises'
 import { verifyFriendlyConfiguration } from './friendly-flow.js'
 import { verifyPromptConfiguration } from './prompt-flow.js'
 import { verifyWorkspace, verifyWorkspaceRestart } from './workspace-flow.js'
+import { verifyTables, verifyTableRestart } from './table-flow.js'
+import { mockTableResponse } from '../../dsh-lite-web-app/test/table-fixtures.js'
+import { mockActionResponse } from '../../dsh-lite-web-app/test/action-fixtures.js'
+import { verifyActions, verifyActionRestart } from './action-flow.js'
 
 async function listen(server) {
   server.listen(0, '127.0.0.1')
@@ -49,7 +53,7 @@ async function boot(home, overlay, base) {
   try {
     for (let attempt = 0; attempt < 150; attempt++) {
       if (child.exitCode !== null) throw new Error(output)
-      try { if ((await fetch(base + '/api/status')).ok) return { close } } catch {}
+      try { if ((await fetch(base + '/api/status')).ok) return { close, output: () => output } } catch {}
       await delay(100)
     }
     throw new Error('Startup timeout: ' + output)
@@ -103,11 +107,12 @@ test('真实 Cordis 加载、保存、凭据隔离、模型调用和重启恢复
     let body = ''
     for await (const chunk of request) body += chunk
     received.push({ url: request.url, auth: request.headers.authorization, body: JSON.parse(body) })
+    const action = mockActionResponse(JSON.parse(body))
     response.writeHead(200, { 'Content-Type': 'text/event-stream' })
     const chunk = { id: 'fixture', object: 'chat.completion.chunk', created: 1, model: 'fixture-model',
-      choices: [{ index: 0, delta: { role: 'assistant', content: '配置已生效' }, finish_reason: null }] }
+      choices: [{ index: 0, delta: action?.delta ?? { role: 'assistant', content: mockTableResponse(JSON.parse(body)) ?? '配置已生效' }, finish_reason: null }] }
     response.write(`data: ${JSON.stringify(chunk)}\n\n`)
-    chunk.choices = [{ index: 0, delta: {}, finish_reason: 'stop' }]
+    chunk.choices = [{ index: 0, delta: {}, finish_reason: action?.finishReason ?? 'stop' }]
     response.write(`data: ${JSON.stringify(chunk)}\n\n`)
     response.end(`data: ${JSON.stringify({ ...chunk, choices: [], usage: {
       prompt_tokens: 100, completion_tokens: 20, total_tokens: 120,
@@ -116,16 +121,21 @@ test('真实 Cordis 加载、保存、凭据隔离、模型调用和重启恢复
   })
   const mockPort = await listen(mock)
   let restarted
+  let succeeded = false
   try {
     await verifyConfiguration(f, mockPort)
     await verifyMultipleModels(f, mockPort)
     await verifyConversations({ f, mockPort, received })
+    const savedTable = await verifyTables({ f, received })
+    const savedAction = await verifyActions({ f, received })
     await verifyFriendlyConfiguration({ f, mockPort, received })
     await verifyPromptConfiguration({ f, received })
     const saved = await verifyWorkspace({ f, received })
     await f.harness.close()
     restarted = await boot(f.home, f.overlay, f.base)
     await verifyWorkspaceRestart({ f, received, saved })
+    await verifyTableRestart(f, savedTable)
+    await verifyActionRestart(f, savedAction)
     const restored = await (await fetch(`${f.base}/api/model-config/state`)).json()
     assert.equal(restored.selected.provider, 'second-route')
     assert.equal(restored.selected.maxTokens, 512)
@@ -135,11 +145,13 @@ test('真实 Cordis 加载、保存、凭据隔离、模型调用和重启恢复
     assert.equal(prompt.text, 'PERSISTED_PROMPT {{model}}')
     await restarted.close()
     await withoutModelPlugin(f)
+    succeeded = true
   } finally {
     await restarted?.close(); await f.harness.close(); await close(mock)
     // 只清理由本测试创建的唯一临时目录。
     assert.ok(resolve(f.home).startsWith(resolve(scratch)))
-    await rm(f.home, { recursive: true, force: true })
+    if (succeeded || !process.env.DSH_TEST_KEEP_FAILED) await rm(f.home, { recursive: true, force: true })
+    else console.error('Failed test artifacts:', f.home, f.harness.output().slice(-8000))
   }
 })
 

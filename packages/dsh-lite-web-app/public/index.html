@@ -6,7 +6,13 @@
   <title>DSH Lite · 对话</title>
   <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="/workspace.css">
+  <link rel="stylesheet" href="/tables.css">
+  <link rel="stylesheet" href="/attachments.css">
+  <link rel="stylesheet" href="/actions.css">
   <script type="module" src="/app.js"></script>
+  <link rel="stylesheet" href="/details.css">
+  <link rel="stylesheet" href="/workbooks.css">
+  <link rel="stylesheet" href="/mche.css">
 </head>
 <body>
   <aside>
@@ -23,18 +29,18 @@
     <div class="local"><span class="dot"></span> 本地工作空间</div>
   </aside>
   <main>
-    <header><span id="breadcrumbs">对话</span><a href="/models" class="settings-link">模型配置</a><a href="/prompts" class="settings-link">提示词</a><span id="model" class="model">正在连接…</span></header>
+    <header><span id="breadcrumbs">对话</span><span id="mche-entry"></span><a href="/models" class="settings-link">模型配置</a><a href="/prompts" class="settings-link">提示词</a><span id="model" class="model">正在连接…</span></header>
     <p id="project-summary" hidden></p>
     <div id="model-picker-row" class="model-picker-row" hidden><label for="model-picker">新对话模型</label><select id="model-picker" aria-describedby="model-picker-hint"></select><small id="model-picker-hint">仅用于本次新对话，不改变默认设置。</small></div>
     <section id="conversation" aria-label="对话内容">
       <div id="welcome">
         <span class="eyebrow">LET’S THINK TOGETHER</span>
         <h1>今天，从什么开始？</h1>
-        <p>整理思路、探索问题，或把一个想法变成清晰的计划。</p>
+        <p>讨论微通道设计问题，上传 Excel / CSV，或把对话中的参数整理成表格。</p>
         <div class="suggestions">
-          <button data-prompt="帮我梳理一个想法，请先问我想解决什么问题。"><span>梳理想法</span><small>把零散的思路整理清楚</small><b aria-hidden="true">↗</b></button>
-          <button data-prompt="帮我制定一份行动计划，请先询问我的目标与时间安排。"><span>制定计划</span><small>找到下一步可以做的事</small><b aria-hidden="true">↗</b></button>
-          <button data-prompt="帮我理解一个复杂概念，请先问我想了解什么。"><span>探索问题</span><small>用容易理解的方式深入了解</small><b aria-hidden="true">↗</b></button>
+          <button data-prompt="我想讨论微通道换热器设计，请先了解我的应用场景。"><span>讨论设计</span><small>梳理场景、工况与设计目标</small><b aria-hidden="true">↗</b></button>
+          <button data-prompt="我想先梳理设计参数，讨论清楚后再整理为表格。"><span>梳理参数</span><small>讨论清楚后，确认建议即可整理</small><b aria-hidden="true">↗</b></button>
+          <button id="welcome-attachment"><span>添加附件</span><small>拖入 Excel / CSV，发送时自动解析</small><b aria-hidden="true">＋</b></button>
         </div>
       </div>
       <div id="messages" role="log" aria-live="polite"></div>
@@ -43,13 +49,30 @@
       <p id="mobile-token-total" class="mobile-token-total" aria-live="polite">当前会话 Token：—</p>
       <p id="error" role="alert" hidden></p>
       <form id="form">
+        <div id="attachment-tray" hidden>
+          <ul id="attachment-list" aria-label="待发送附件"></ul>
+          <p id="attachment-status" role="status"></p>
+        </div>
         <label class="sr-only" for="prompt">输入你的问题</label>
-        <textarea id="prompt" rows="3" maxlength="8000" placeholder="输入你的问题，或分享一个想法…" required></textarea>
-        <div class="composer-bottom"><span id="status" role="status">Enter 发送 · Shift + Enter 换行</span><button id="send" type="submit" aria-label="发送消息">发送 <span aria-hidden="true">↑</span></button></div>
+        <textarea id="prompt" rows="3" maxlength="8000" placeholder="输入问题或参数描述，也可直接粘贴 Excel 表格…"></textarea>
+        <div class="composer-bottom"><div class="composer-left"><button id="attach-button" type="button" aria-label="添加附件" aria-haspopup="dialog" aria-controls="attachment-dialog"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>附件</button><span id="status" role="status">Enter 发送 · Shift + Enter 换行</span></div><div class="composer-submit"><button id="send" type="submit" aria-label="发送消息">发送 <span aria-hidden="true">↑</span></button></div></div>
+        <p id="table-hint">可粘贴表格或拖入 Excel/CSV；附件在发送时自动上传解析。</p>
       </form>
       <p class="footnote">AI 的回答可能存在偏差，请核实重要信息。</p>
     </div>
+    <div id="attachment-drop-overlay" role="status" hidden><strong>松开鼠标，添加附件</strong><span>文件会先加入待发送列表</span></div>
   </main>
+  <dialog id="attachment-dialog" aria-labelledby="attachment-heading" aria-describedby="attachment-description">
+    <div class="attachment-dialog-head"><h2 id="attachment-heading">添加附件</h2><button id="attachment-close" type="button" aria-label="关闭附件窗口">×</button></div>
+    <p id="attachment-description">选择后会显示在输入框中，点击发送即可上传。</p>
+    <button id="attachment-choose" type="button" autofocus>
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 16V4m-4 4 4-4 4 4M5 14v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-5"/></svg>
+      <strong>把文件拖到这里</strong><span>或点击选择文件</span>
+    </button>
+    <input id="attachment-file" type="file" accept=".xlsx,.xls,.csv" multiple hidden>
+    <p class="attachment-help">支持 Excel / CSV · 每个文件最大 5 MB · 最多 8 个附件<br>自动识别文件内容与中文编码</p>
+    <p id="attachment-error" role="alert"></p>
+  </dialog>
   <dialog id="record-dialog" aria-labelledby="record-heading">
     <h2 id="record-heading">项目设置</h2>
     <form id="record-form">

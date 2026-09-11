@@ -10,7 +10,9 @@
         "@dsh-lite/workspace",
         "@dsh-lite/web-app",
         "@dsh-lite/model-config",
-        "@dsh-lite/prompt-config"
+        "@dsh-lite/prompt-config",
+        "@dsh-lite/excel-understanding",
+        "@dsh-lite/mche"
       ],
       "patchReload": "startup"
     }

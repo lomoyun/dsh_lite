@@ -1,0 +1,92 @@
+[
+  {
+    "path": "packages/dsh-mche/src/calculation-service.js",
+    "before": "87c2de139c8fcc102d3c94979a8b34060c87e108ead294207a9e80bb2728ed7a",
+    "after": "52e358bc46b0bb477c325d3123920450b3cc8513634c56ae9e8c4fc242187f09"
+  },
+  {
+    "path": "packages/dsh-mche/src/fin-recommendation.js",
+    "before": "8168540edb15c6acaeab3952c35ae32db718ac793422553cab4a876851552cf1",
+    "after": "0ce541165fe23edfcf2dae67ac095f5004500a0997163421675aae05e5d64b82"
+  },
+  {
+    "path": "packages/dsh-mche/src/index.js",
+    "before": "c22418657469b127e611bc9f15651046390da25405a3200260025271a830aa3e",
+    "after": "82bd22c2ee0b3f6175e50a262be0d5fc7456baef53668f0b1483e7314b2845b7"
+  },
+  {
+    "path": "packages/dsh-mche/src/recommendation.js",
+    "before": "369d0c80fb3c95cfb1208c091187e15aee8af6c9ad303e80c48bf3ba35a1631b",
+    "after": "8ec14bf33b19c93ccf5e31aeaa6aeeb980b0ce321ca9b0faa8d72c6b11322b4c"
+  },
+  {
+    "path": "packages/dsh-mche/src/refrigerant-selection.js",
+    "before": "361c3af8d6025bfcbc50cb3ab2658b10542df0fa2234ee4504211754b05b319c",
+    "after": "e8515764bee34503f151f15bf506439732d00080319dd0be7c3f47d187354861"
+  },
+  {
+    "path": "packages/dsh-mche/src/service.js",
+    "before": "cef45d1b758ded7711e7c8edb58dafe6789980b817d3e4929eb19dfc1981594a",
+    "after": "e401ea6ab70d8e496889f5e797b6cc1c6e3a015642f69346becde1b063e4bc99"
+  },
+  {
+    "path": "packages/dsh-mche/src/tool-output.js",
+    "before": "77847fdd35272b0a9d6497394d7e9f6284461452656e214f6070b858cff94fe9",
+    "after": "6424f592c5617a6c96f681eac903bb3c40ec24c5602645a9992a5796a027e1db"
+  },
+  {
+    "path": "packages/dsh-mche/src/tools.js",
+    "before": "ea1229f29b098c6311422deff1fc3b989617e07714145294890df01bfd9d9116",
+    "after": "46d106a5ac5348aa7325f3984e6681eccaad29ba442f158cb839e189a8a1863d"
+  },
+  {
+    "path": "packages/dsh-lite-web-app/src/http.js",
+    "before": "79d7a0802addef1dd16e016a1b0a2301c96996321e439f3d1bf52fc1b9bea4f3",
+    "after": "5ffd170a3453f14710d789b10e0e516ef84a7ae1bd709c3841a136346209447f"
+  },
+  {
+    "path": "packages/dsh-lite-web-app/src/mche-input.js",
+    "before": "1e805618ebb662688c1fb1f5be07901d342ba86eba1679154703ba58ed619301",
+    "after": "84f523443203424b917d9fe75f8dda3eca45c0a5c04db7aec74a15019707881f"
+  },
+  {
+    "path": "packages/dsh-lite-web-app/src/response-view.js",
+    "before": "d5220d3abb673a16f687d6e52833834d54fdf025f004273051c82dbf407fb8e3",
+    "after": "7d6cd8dd46ec326a622a47d5530cdd7b38a72485d78e186f634afbb98698cf25"
+  },
+  {
+    "path": "packages/dsh-lite-web-app/public/flow-topology.js",
+    "before": "3a6d4edc43e64f79063e401143ba7da10d5ddfb57670b3f82fb0350bf4c0d51b",
+    "after": "c19ff2e04839ebfd1e87933b97feee7daa6346912562d871b7dae0dbe5467da0"
+  },
+  {
+    "path": "packages/dsh-lite-web-app/public/mche-calculation.js",
+    "before": "8ad0392c2a6e7528d2bf8a85aff5cf57c5e0c6e9b4a1babbafcfbc163c27933e",
+    "after": "623b2a7c5fff0defd2649c2188f65f8a6da5b51afd1585bd80668f6f200bf788"
+  },
+  {
+    "path": "packages/dsh-lite-web-app/public/mche-candidates.js",
+    "before": "44a165e812c466d9a0039cddff1face6f8dbc0fa38c8abb52e5d331b983ac7ed",
+    "after": "96e4e67e15a27ced0da8f31c7a0d15106462abcccac8db5f090f38e03171876a"
+  },
+  {
+    "path": "packages/dsh-lite-web-app/public/mche-fins.js",
+    "before": "a4da3b1dc89288172ce7e82cf3e692891a6402b96fbafdd33a867473dbd96965",
+    "after": "d2bfc3cdebb6e00c48a1a0890e48ff1b09807630d987de911d07b2811180646c"
+  },
+  {
+    "path": "packages/dsh-lite-web-app/public/mche-refrigerants.js",
+    "before": "3db6bf786ba9be54c988092360a807b16c7c1a755b0a435e53ff6c480308aae7",
+    "after": "9d2c1febb1ba6d9f38f363331e12f1dbda85466e19dc249eeae5defc68bc7b8b"
+  },
+  {
+    "path": "packages/dsh-lite-web-app/public/mche-requirements.js",
+    "before": "01c780e3464c242bd273f700534e1d1a6ddc12367965d28b0649f4d2ba764dc7",
+    "after": "a1b9173a1e72ec2241c2b3d44295a3bd3a2af2bc4fdf83719725bb23b97b5911"
+  },
+  {
+    "path": "packages/dsh-lite-web-app/public/mche-view.js",
+    "before": "441c44cee120f076c0102224cf2668f86b97d53e2bfa44a5c244cdd8af5d1c9b",
+    "after": "7786d26b13c877c64a978772af0282c5d3c89f3e0bca8819cb17c808bd5479c2"
+  }
+]

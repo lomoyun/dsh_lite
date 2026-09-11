@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "provider": "deterministic local fixture",
+  "checks": [
+    "统一四类待办、能力限制及只读入口；语义选项保留原值单位",
+    "旧候选依据独立保留，明确约束变化使推荐过期",
+    "推荐模式保存、刷新恢复、历史不自动打开、390px适配"
+  ],
+  "errors": []
+}

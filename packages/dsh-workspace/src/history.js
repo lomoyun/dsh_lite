@@ -18,8 +18,8 @@ export function snapshotOf(events) {
 }
 export function titleOf(events) {
   const title = events.findLast((e) => e.type === 'session/title')?.data.title
-  const first = messagesOf(events).find((m) => m.role === 'user')?.text
-  return String(title || first || '新对话').replace(/\s+/g, ' ').slice(0, 60)
+  const first = messagesOf(events).find((m) => m.role === 'user')?.text.split('\n\n【对话表格输入 v1】')[0]
+  return String(title || first || '新对话').split('【对话表格')[0].replace(/\s+/g, ' ').trim().slice(0, 60) || '新对话'
 }
 export function summary(record) {
   const { snapshot, ...rest } = record

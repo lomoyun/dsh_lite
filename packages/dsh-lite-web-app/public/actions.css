@@ -1,0 +1,12 @@
+.conversation-action { margin-top: 20px; border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: 10px; padding: 18px 20px; background: var(--surface); overflow-wrap: anywhere; }
+.conversation-action h3 { margin: 2px 0 10px; font-size: 18px; }
+.conversation-action p { margin: 8px 0; white-space: pre-wrap; }
+.conversation-action .action-label { color: var(--accent); font-size: 13px; font-weight: 600; }
+.action-effect, .action-state { color: var(--muted); font-size: 14px; }
+.action-buttons { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+.action-buttons[hidden] { display: none; }
+.action-buttons button { min-height: 44px; padding: 8px 18px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 8px; }
+.action-buttons .action-confirm { background: var(--accent); color: var(--surface); border-color: var(--accent); }
+.conversation-action[data-status="stale"], .conversation-action[data-status="dismissed"] { border-left-color: var(--line); }
+.conversation-action[data-status="failed"] .action-state { color: var(--error); }
+@media (max-width: 540px) { .conversation-action { padding: 14px; } .action-buttons button { flex: 1; } }

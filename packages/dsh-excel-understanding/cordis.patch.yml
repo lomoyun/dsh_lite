@@ -1,0 +1,5 @@
+- insert:
+    - id: excel-understanding
+      name: '@dsh-lite/excel-understanding'
+      config:
+        home: !!js process.env.DSH_HOME

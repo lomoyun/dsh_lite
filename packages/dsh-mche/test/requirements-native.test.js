@@ -1,0 +1,56 @@
+import test from 'node:test'
+import assert from 'node:assert/strict'
+import { readFile } from 'node:fs/promises'
+import { join } from 'node:path'
+import { nativeFixture, post } from '../../dsh-excel-understanding/test/native-fixture.js'
+import { mockRequirementsResponse } from './requirements-model-fixture.js'
+import { repo } from './calculation-fixture.js'
+
+test('real DSH: Excel upload → Agent reads/recommends → user confirms → preparation blocks → restart, session/origin isolation', { timeout: 90000 }, async t => {
+  const f=await nativeFixture(t,false,{respond:mockRequirementsResponse}),{sessionId}=await post(f,'/api/session/prepare',{})
+  const request=(path,args={},status=200)=>post(f,'/api/mche/'+path,{sessionId,...args},status)
+  const bytes=await readFile(join(repo,'答复_','3-冷凝器客户输入.xls'))
+  const upload=await fetch(f.base+'/api/excel/upload',{method:'POST',body:bytes,headers:{'Content-Type':'application/octet-stream','X-File-Name':'renamed-customer.xls','X-Session-Id':sessionId}})
+  assert.equal(upload.status,200); const {file}=await upload.json()
+  const asset=await fetch(f.base+'/mche-requirements.js'); assert.equal(asset.status,200); assert.match(await asset.text(),/requirementsPane/)
+  const reply=await post(f,'/api/chat',{sessionId,prompt:'需求表验收：读取客户需求并给出Boundary建议。',workbooks:[{...file,name:'伪造名称.xls',sheets:[{name:'伪造Sheet'}]}]})
+  assert.equal(reply.details.length,1,JSON.stringify(reply)); assert.ok(reply.details.every(d=>d.status==='completed'))
+  const firstRequest=JSON.stringify(f.received[0].messages)
+  assert.ok(firstRequest.includes(file.fileId));assert.ok(firstRequest.includes('Condenser Inputs'))
+  assert.ok(!firstRequest.includes('伪造名称'));assert.ok(!firstRequest.includes('伪造Sheet'))
+  assert.match(firstRequest,/\\"revision\\":0/)
+  assert.match(reply.finalResponse,/SH=27.4 K/)
+  const calls=f.received.flatMap(body=>body.messages.flatMap(m=>m.tool_calls??[]))
+  assert.ok(calls.length>0);assert.ok(calls.every(c=>c.function.name==='mche_requirements_read'))
+  assert.equal(reply.details.at(-1).mche.view,'requirements')
+  let state=await request('requirements')
+  assert.equal(state.requirements.document.records.length,26);assert.equal(state.requirements.reviewed,false)
+  assert.equal(state.requirements.profileDraft.sections.length,4)
+  assert.equal(state.requirements.assessment.entries.refSuperheat.normalized,27.4)
+  state=await request('requirements-draft',{revision:state.revision,boundary:{refrigerant:'ptsc',air:'ptrh',flow:'volume'},supplements:{airPressure:{value:101325,unit:'Pa',source:'自动化界面夹具输入'}}})
+  const review={revision:state.revision,reviewId:state.requirements.reviewId}
+  state=await request('requirements-confirm',review);assert.equal(state.requirements.reviewed,true)
+  await request('requirements-confirm',review,409)
+  state=await request('prepare');assert.equal(state.calculation.preparation.native,null);assert.equal(state.calculation.preparation.calculationReady,false)
+  assert.ok(state.calculation.preparation.blockers.some(b=>b.code==='boundary_unsupported'))
+  const other=await post(f,'/api/session/prepare',{})
+  await post(f,'/api/mche/requirements-read',{sessionId:other.sessionId,fileId:file.fileId,revision:0},403)
+  const forbidden=await fetch(f.base+'/api/mche/requirements-confirm',{method:'POST',headers:{'Content-Type':'application/json',Origin:'https://untrusted.invalid'},body:JSON.stringify({sessionId,...review})})
+  assert.equal(forbidden.status,403)
+  const original=await fetch(f.base+'/api/excel/artifact?'+new URLSearchParams({sessionId,fileId:file.fileId,artifact:'original'}))
+  assert.equal(original.status,200);assert.ok(Buffer.from(await original.arrayBuffer()).equals(bytes))
+  await f.close();await f.boot()
+  const restored=await request('requirements');assert.equal(restored.requirements.reviewed,true)
+  assert.deepEqual(restored.calculation.requirementsSnapshot,state.calculation.requirementsSnapshot)
+  const history=await post(f,'/api/session/open',{sessionId})
+  assert.ok(history.messages.some(m=>m.details?.some(d=>d.mche?.view==='requirements')))
+  const follow=await post(f,'/api/chat',{sessionId,prompt:'需求表追问：当前确认状态和缺项。'})
+  assert.equal(follow.details.length,1);assert.equal(follow.details[0].status,'completed')
+  const edited=await post(f,'/api/chat',{sessionId,prompt:'需求表改温：冷媒入口温度改为84°C，并查看完整计算工况。'})
+  assert.ok(edited.details.length>=3,JSON.stringify(edited));assert.ok(edited.details.every(d=>d.status==='completed'))
+  assert.match(JSON.stringify(edited),/SH=29 K/)
+  const after=await request('requirements')
+  assert.equal(after.requirements.assessment.entries.refSuperheat.normalized,29)
+  assert.equal(after.requirements.reviewed,false);assert.equal(after.calculation.preparation,null)
+  assert.equal(after.requirements.document.records.find(r=>r.key==='refTemperature').raw,'82,4 °C')
+})

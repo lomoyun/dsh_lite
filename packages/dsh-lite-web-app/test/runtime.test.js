@@ -55,3 +55,20 @@ test('失败 turn 不返回部分回复，超时也释放 Agent', async () => {
     await f.runtime.close()
   }
 })
+
+test('工具多步骤历史与实时回复一致，整轮用量包括无文字的工具调用步骤', async () => {
+  const message = (seq, turn, text, totalTokens) => ({ seq, type: 'assistant/message',
+    data: { turn, message: { content: text ? [{ type: 'text', text }] : [] },
+      usage: { inputTokens: totalTokens - 5, outputTokens: 5, totalTokens } } })
+  const events = [message(1, 1, '', 120), message(2, 1, '请确认操作', 120), message(3, 2, '表格已整理', 80)]
+  const workspace = { requireRecord: async () => ({ snapshot: {} }), events: async () => events,
+    resumable: async () => { throw new Error('只读测试') } }
+  const runtime = createChatRuntime({ get: (name) => name === 'liteWorkspace' ? workspace : undefined }, {})
+  const opened = await runtime.open('fixture')
+  assert.equal(2, opened.messages.length)
+  assert.equal('请确认操作', opened.messages[0].text)
+  assert.equal(240, opened.messages[0].usage.totalTokens)
+  assert.equal(80, opened.messages[1].usage.totalTokens)
+  assert.equal(320, opened.sessionUsage.totalTokens)
+  await runtime.close()
+})

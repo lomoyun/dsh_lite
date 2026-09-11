@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "hashes": {
+    ".tll/config.yaml": "7c25f859a5ebc5b8f90be00e9e85f8e6666292b449b75c3efdb0cb34f2da60b5",
+    ".tll/project.md": "d210c80c587bca7ac40a00089b6fcc3beeaa3426e32eea20592aa895a5d019fb",
+    ".tll/.gitignore": "3cc0a0c622293c9ae41d04d6b66be375dfbe82ca1a00ffda5ddcabc53b49de48",
+    "AGENTS.md#block": "7e23c049588951304b72deb3025bb8b10b9d78f70a9c63c1ebfa1605a77ba436"
+  },
+  "platforms": [
+    "codex"
+  ],
+  "hooks": []
+}

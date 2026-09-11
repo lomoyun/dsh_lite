@@ -1,0 +1,8 @@
+{
+  "message": "/api/chat: 502 {\"status\":502,\"sessionExpired\":true,\"error\":\"本轮未完成，请重新打开对话核对状态，并检查模型配置或网络。\"}\n[DSH trace] {\"timestamp\":\"2026-09-11T03:02:29.576Z\",\"event\":\"trace/enabled\",\"setting\":\"DSH_LITE_TRACE\",\"enabled\":true}\nDSH Lite: http://127.0.0.1:58617\n",
+  "stack": "Error: /api/chat: 502 {\"status\":502,\"sessionExpired\":true,\"error\":\"本轮未完成，请重新打开对话核对状态，并检查模型配置或网络。\"}\n[DSH trace] {\"timestamp\":\"2026-09-11T03:02:29.576Z\",\"event\":\"trace/enabled\",\"setting\":\"DSH_LITE_TRACE\",\"enabled\":true}\nDSH Lite: http://127.0.0.1:58617\n\n    at post (file:///E:/projects/dsh_mche_agent/packages/dsh-excel-understanding/test/native-fixture.js:71:43)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async file:///E:/projects/dsh_mche_agent/scripts/verify-flow-topology-browser.mjs:14:3",
+  "checks": [],
+  "errors": [],
+  "setupErrors": [],
+  "modelRequestCount": 0
+}

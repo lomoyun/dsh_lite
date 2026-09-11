@@ -1,0 +1,33 @@
+{
+  "syntaxChecked": [
+    "packages/dsh-mche/src/calculation-service.js",
+    "packages/dsh-mche/src/fin-recommendation.js",
+    "packages/dsh-mche/src/index.js",
+    "packages/dsh-mche/src/recommendation.js",
+    "packages/dsh-mche/src/refrigerant-selection.js",
+    "packages/dsh-mche/src/service.js",
+    "packages/dsh-mche/src/tool-output.js",
+    "packages/dsh-mche/src/tools.js",
+    "packages/dsh-lite-web-app/src/http.js",
+    "packages/dsh-lite-web-app/src/mche-input.js",
+    "packages/dsh-lite-web-app/src/response-view.js",
+    "packages/dsh-lite-web-app/public/flow-topology.js",
+    "packages/dsh-lite-web-app/public/mche-calculation.js",
+    "packages/dsh-lite-web-app/public/mche-candidates.js",
+    "packages/dsh-lite-web-app/public/mche-fins.js",
+    "packages/dsh-lite-web-app/public/mche-refrigerants.js",
+    "packages/dsh-lite-web-app/public/mche-requirements.js",
+    "packages/dsh-lite-web-app/public/mche-view.js",
+    "packages/dsh-mche/src/guidance.js",
+    "packages/dsh-mche/src/recommendation-context.js",
+    "packages/dsh-lite-web-app/public/mche-guidance.js",
+    "packages/dsh-mche/test/guidance.test.js",
+    "packages/dsh-lite-web-app/test/response-view.test.js",
+    "scripts/guidance-live-runtime.mjs",
+    "scripts/verify-mche-guidance-live.mjs",
+    "scripts/verify-mche-guidance-baseline.mjs",
+    "scripts/verify-mche-guidance-browser.mjs"
+  ],
+  "whitespaceFailures": [],
+  "whitespaceCheck": "git diff --no-index --check; exit 1 without diagnostics denotes differences"
+}

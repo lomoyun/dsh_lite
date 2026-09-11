@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "checks": [
+    "四主入口、26条记录、默认折叠证据、固定导航与操作区",
+    "26条记录逐项展开：原始值、显示值、单位候选、来源坐标均保留",
+    "折叠不丢编辑、不自动保存，未保存跳转保护、保存恢复折叠、缺依据自动展开",
+    "核对仅展开差异，第二次明确确认才写接口；SH与主工况快照保留",
+    "默认紧凑流图、放大完整控制、播放偏好和入口内位置恢复",
+    "桌面与390px全部入口无横向溢出；键盘导航/展开/关闭及减少动态通过"
+  ],
+  "errors": [],
+  "writes": [
+    "requirements-draft",
+    "requirements-draft",
+    "requirements-draft",
+    "requirements-confirm"
+  ],
+  "at": "2026-09-11T09:22:21.584Z",
+  "provider": "deterministic local fixture"
+}

@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "viewport": [
+    1440,
+    1000
+  ],
+  "mobile": [
+    390,
+    844
+  ],
+  "errors": [],
+  "recordCount": 26,
+  "derivedSH": 27.4,
+  "sourceSha256": "5806f521604c4933f9005d4fa92f89547a6c47aa87b4f2f08f791511ee9513d0",
+  "boundary": {
+    "refrigerant": "ptm",
+    "air": "ptrh",
+    "flow": "volume"
+  },
+  "reviewed": true,
+  "inputComplete": true
+}

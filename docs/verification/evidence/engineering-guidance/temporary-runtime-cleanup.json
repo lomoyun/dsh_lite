@@ -1,0 +1,18 @@
+[
+  {
+    "run": "baseline-verified",
+    "credentialsCleared": true
+  },
+  {
+    "run": "live-final",
+    "credentialsCleared": true
+  },
+  {
+    "run": "evidence-recheck",
+    "credentialsCleared": true
+  },
+  {
+    "run": "live-acceptance",
+    "credentialsCleared": true
+  }
+]

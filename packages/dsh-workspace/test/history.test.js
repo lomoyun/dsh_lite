@@ -39,3 +39,14 @@ test('缺少原提示词快照或插件时拒绝恢复，不使用新的默认�
   workspace.requireRecord = async () => ({ projectId: null, snapshot: { system: 'old' } })
   await assert.rejects(Workspace.prototype.resumable.call(workspace), /启用提示词插件/)
 })
+
+test('首条消息前仅允许仍存活的草稿会话，重启或归档后不能绕过快照门禁', async () => {
+  let live = true, archived = false
+  const workspace = { requireRecord: async () => ({ projectId: null, status: 'draft', archived }),
+    store: { view: async () => ({ projects: [] }) }, ctx: { get: (name) => name === 'agents' ? { get: () => live ? {} : undefined } : {} } }
+  assert.equal('draft', (await Workspace.prototype.resumable.call(workspace, 'draft-session')).status)
+  live = false
+  await assert.rejects(Workspace.prototype.resumable.call(workspace, 'draft-session'), /只能查看/)
+  live = true; archived = true
+  await assert.rejects(Workspace.prototype.resumable.call(workspace, 'draft-session'), /已归档/)
+})

@@ -20,6 +20,21 @@ pnpm start
 没有 SDK 聊天子进程，也没有配置代理或第二个端口。
 默认 DSH home 是项目 `.dsh/`；会话元数据 cwd 仍是项目根目录。
 
+### 终端调用日志
+
+默认关闭。可在项目 `.env` 中设置 `DSH_LITE_TRACE=1`，然后重启 `pnpm start`；改为 `0` 关闭。也可仅对当前 PowerShell 设置：
+
+```powershell
+$env:DSH_LITE_TRACE='1'
+pnpm start
+```
+
+开启后终端出现 `[DSH trace]`。每行是带时间、会话ID、turn/step的JSON记录，包含输入及插件提示、步骤开始/结束、工具名/完整参数/完整结果/耗时、每次模型调用的 `assistant/response`、Token用量和请求错误。工具结果不沿用页面20,000字符的截断；并行调用通过callId关联。`ok:false`的业务错误也标为failed。
+
+`assistant/response` 记录DSH组装后的模型输出；服务商实际返回reasoning时记录该内容，没有返回时不生成思考文本。终端按完整消息输出，不逐Token刷屏。请求头、模型配置和图片二进制不输出，常见凭证字段及已知环境密钥脱敏。此开关不修改页面展示或持久化格式，也不写入新的日志文件。
+
+同名PowerShell环境变量优先于 `.env`。修改后需重启服务；用 `$env:DSH_LITE_TRACE='0'` 可明确关闭。机器运行时的普通启动日志不受此开关影响。
+
 ## 插件选择在哪里
 
 模板是 [profiles/lite/package.json](profiles/lite/package.json)。
@@ -35,7 +50,9 @@ pnpm start
         "@dsh-lite/workspace",
         "@dsh-lite/web-app",
         "@dsh-lite/model-config",
-        "@dsh-lite/prompt-config"
+        "@dsh-lite/prompt-config",
+        "@dsh-lite/excel-understanding",
+        "@dsh-lite/mche"
       ],
       "patchReload": "startup"
     }
@@ -49,6 +66,8 @@ pnpm start
 - `web-app`：共享 HTTP 服务和轻量聊天页面，直接调用 `ctx.agents`。
 - `model-config`：向共享服务注册配置页面和 API，可从 bundles 中移除。
 - `prompt-config`：提示词编辑、覆盖和预览，页面 `/prompts`，独立可卸载。
+- `excel-understanding`：原工作簿持久化、按区域查阅、来源校验和 Linux 布局预览，见 [插件说明](packages/dsh-excel-understanding/README.md)。
+- `mche`：扁管、翅片与冷媒目录选型、确认快照，以及单排 PTM 工程核对、原生参数准备、异步 x86 DLL 计算和结果追溯，见 [插件说明](packages/dsh-mche/README.md)。全部目录仍可查询；只有已验证映射可执行。当前真实调用仍有 NaN 和工程算例资料验收阻塞，见 [计算验收记录](docs/verification/2026-09-09-mche-calculation.md)。
 
 修改**实际 profile** 的 bundles 后重启生效。模板仅影响首次初始化。
 不要移除其他插件依赖的底层服务。轻量版保留 dsh-base 的其他通用能力，并非安全沙箱。
@@ -111,7 +130,8 @@ DSH 的输入计数不含缓存，界面分别展示非缓存输入、输出、�
 聊天页可为新对话选择模型，不改变全局默认值；开始后选择器锁定，旧对话保留创建时的选择。
 未单独选择时优先使用项目默认模型，否则使用全局默认；输出上限仍由模型配置插件管理。
 提供方连接和密钥属于共享配置，修改后会影响该提供方的后续请求。
-前端非流式显示，每次只处理一个模型请求，超时三分钟。
+正文流式显示，表格、工具结果和 Excel 理解通过蓝色链接在右侧查看；每次处理一个对话轮次。
+整轮默认最多十分钟，模型/工具连续三分钟没有新进展时停止；SSE 心跳不延长等待。两类时限可在 `lite-web-app` 配置中分别调整，超时保留已保存资料并显示明确提示。
 新建对话释放旧 Agent；最多保留 32 个运行句柄，回收句柄不会删除历史。
 侧栏按“个人工作区 → 项目 / 未归类 → 会话”组织，支持项目新建、重命名、归档和恢复，
 会话重命名、移动、归档和恢复。刷新恢复最近打开的会话；浏览器只保存选择的 ID。

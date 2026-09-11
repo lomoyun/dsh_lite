@@ -1,0 +1,62 @@
+{
+  "passed": true,
+  "segments": [
+    {
+      "text": "我先读取当前会话的需求文件。",
+      "links": [
+        "查看需求来源"
+      ]
+    },
+    {
+      "text": "已找到附件，正在核对当前方案。",
+      "links": [
+        "查看当前MCHE方案"
+      ]
+    },
+    {
+      "text": "现在读取客户需求，保留原始值和来源。",
+      "links": [
+        "核对客户需求"
+      ]
+    },
+    {
+      "text": "需求已保存为待核对记录，继续整理 Boundary 建议。",
+      "links": [
+        "查看 Boundary 建议"
+      ]
+    },
+    {
+      "text": "已读取26条有值需求，推荐入口 P&T＋出口 SC，PTM仍缺质量流量。主工况空气32°C与测试42°C分别保留；90°?待核。请在客户需求页选择Boundary并核对差异，当前尚未确认。",
+      "links": []
+    }
+  ],
+  "edgeCases": {
+    "parallel": "工具处理中 · 2 项进行中",
+    "waiting": "工具处理中 · 1 项进行中",
+    "failure": {
+      "state": "incomplete",
+      "links": 1,
+      "label": "查看读取区域 · 失败",
+      "body": "已保留读取失败信息。"
+    },
+    "safe": true,
+    "truncation": {
+      "state": "incomplete",
+      "label": "回复已截断 · 达到输出上限"
+    },
+    "fallback": 1
+  },
+  "errors": [],
+  "requests": [
+    "/api/mche/case",
+    "/api/mche/case"
+  ],
+  "desktop": [
+    1440,
+    1000
+  ],
+  "mobile": [
+    390,
+    844
+  ]
+}

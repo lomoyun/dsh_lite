@@ -37,4 +37,5 @@ test('历史快照不包含凭据；缺少请求信息不猜测默认模型', ()
     { type: 'request/header', data: { header: { config: { provider: 'p', model: 'm', maxTokens: 512, apiKey: 'secret' }, system: 'original' } } }]
   assert.deepEqual(snapshotOf(events), { options: { provider: 'p', model: 'm', maxTokens: 512 }, system: 'original' })
   assert.equal(titleOf(events), '我的问题')
+  assert.equal('解析工作簿', titleOf([...events, { type: 'session/title', data: { title: '解析工作簿 【对话表格输' } }]))
 })

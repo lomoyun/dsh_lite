@@ -1,0 +1,131 @@
+﻿{
+    "at":  "2026-09-11T09:25:49.7802530Z",
+    "head":  "596ab22438e70d1d52fa2aafa31e0622c379fc5f",
+    "branch":  "dsh_mche_agent",
+    "review":  "main-agent diff and screenshot review",
+    "regression":  {
+                       "passed":  129,
+                       "failed":  1,
+                       "failure":  "fin-native fixture EPERM rename",
+                       "command":  "node --test --test-concurrency=1 packages/dsh-lite-web-app/test/*.test.js packages/dsh-mche/test/*.test.js",
+                       "tests":  130,
+                       "log":  ".dsh/mche-detail-final-regression.log",
+                       "skipped":  0
+                   },
+    "push":  false,
+    "code":  [
+                 {
+                     "sha256":  "4c17b07f9aba16ced2dd640331680331f443b954a7a73bff3d1da12271a17f94",
+                     "path":  "packages/dsh-lite-web-app/public/app.js"
+                 },
+                 {
+                     "sha256":  "a8fbfee8e6f0322172fdc5633676d289e8c3e93fdaa8c23b552d55770fac4ea4",
+                     "path":  "packages/dsh-lite-web-app/public/flow-topology.js"
+                 },
+                 {
+                     "sha256":  "844247d5a0979144238dab5b77c34c4155527fa3a74aafc3dc298ec1317bd7c5",
+                     "path":  "packages/dsh-lite-web-app/public/mche-calculation.js"
+                 },
+                 {
+                     "sha256":  "1530e81a3c7e61972ce8ded59730d242de98569f22e7310d811247b357c672f9",
+                     "path":  "packages/dsh-lite-web-app/public/mche-candidates.js"
+                 },
+                 {
+                     "sha256":  "95dd51a5388b0551b5f70c149ab3fc80ec749cd81925cfd9dbe149089fbbef87",
+                     "path":  "packages/dsh-lite-web-app/public/mche-elements.js"
+                 },
+                 {
+                     "sha256":  "34cc295c54aa4735bcf409e6ed64db66946c7ee7a17de59ad7487fc868af0bb8",
+                     "path":  "packages/dsh-lite-web-app/public/mche-fins.js"
+                 },
+                 {
+                     "sha256":  "7dffe40bd0b3a97813926c167029d18daf3a1757a496be90b62638e41a00396d",
+                     "path":  "packages/dsh-lite-web-app/public/mche-guidance.js"
+                 },
+                 {
+                     "sha256":  "27721152201678db477dd71d0ca1e79437c261ffe134e973e9e18cebbf3ffcaf",
+                     "path":  "packages/dsh-lite-web-app/public/mche-inputs.js"
+                 },
+                 {
+                     "sha256":  "df108766961581fa311c518c4b8859c270eb4b5ca6f0269209d6da22487b5135",
+                     "path":  "packages/dsh-lite-web-app/public/mche-refrigerants.js"
+                 },
+                 {
+                     "sha256":  "ddc796c2b9051ea736337111727ae9abf2c5766cb12213351145694137b86828",
+                     "path":  "packages/dsh-lite-web-app/public/mche-requirements.js"
+                 },
+                 {
+                     "sha256":  "cdfba7682ee3c40982a9260d1577f99421f2efcc6f42894331db9a25478d9df1",
+                     "path":  "packages/dsh-lite-web-app/public/mche-view.js"
+                 },
+                 {
+                     "sha256":  "6e743aa9ff759a588d65c3a470909bb7a3706653397fa7ec0571cb92b675b145",
+                     "path":  "packages/dsh-lite-web-app/public/mche.css"
+                 },
+                 {
+                     "sha256":  "fbc6797460884a5d9834c6cc738dafced50e8992da45c225ddb3ebedc4676256",
+                     "path":  "scripts/mche-browser-helpers.mjs"
+                 },
+                 {
+                     "sha256":  "ad726ba59fd8963e6028839dfa460f9adfee9160bcdbf8bab70ffac6a16d272a",
+                     "path":  "scripts/verify-mche-panel-browser.mjs"
+                 },
+                 {
+                     "sha256":  "f027136adae57b4be6b84fb4e80086154c7aec24b90aae38206e1e1995a374b6",
+                     "path":  "scripts/verify-mche-panel-links-browser.mjs"
+                 },
+                 {
+                     "sha256":  "823053316f5e4bae61ef8286df041c73595b566ddc7abfe06538c323e969947f",
+                     "path":  "scripts/verify-requirements-browser.mjs"
+                 },
+                 {
+                     "sha256":  "0043838ac490e2bfa66a6093253829bbb2f866efb045be4c332a318ce9dce2b0",
+                     "path":  "scripts/verify-mche-guidance-browser.mjs"
+                 },
+                 {
+                     "sha256":  "78e1c0c5282126ddbe86ba0f01910d21b0eb5fa1ebe25a9964650bcee58d8161",
+                     "path":  "scripts/verify-flow-topology-browser.mjs"
+                 },
+                 {
+                     "sha256":  "f2ba3693a978c77b3e2b22e058b323eecd39004b3486b06c0819a4a158889521",
+                     "path":  "scripts/verify-mche-editor-navigation-browser.mjs"
+                 }
+             ],
+    "browser":  {
+                    "guidance":  "passed",
+                    "flow":  "passed",
+                    "mobile":  [
+                                   390,
+                                   844
+                               ],
+                    "desktop":  [
+                                    1440,
+                                    1000
+                                ],
+                    "panel":  "passed",
+                    "errors":  0,
+                    "requirements":  "passed",
+                    "links":  "passed",
+                    "editor":  "passed"
+                },
+    "rerun":  {
+                  "log":  ".dsh/mche-detail-fin-rerun.log",
+                  "command":  "node --test packages/dsh-mche/test/fin-native.test.js",
+                  "failed":  0,
+                  "passed":  2
+              },
+    "commit":  false,
+    "task":  "mche-detail-panel",
+    "schemaVersion":  1,
+    "typecheck":  "passed",
+    "initialParallel":  {
+                            "targetedRerunFailed":  0,
+                            "targetedRerunPassed":  4,
+                            "tests":  130,
+                            "failed":  2,
+                            "passed":  128
+                        },
+    "provider":  "deterministic local fixture",
+    "scopedWhitespace":  "passed",
+    "nativeEngineeringAcceptance":  false
+}
